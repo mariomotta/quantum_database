@@ -1,0 +1,91 @@
+Bond distance: 3.5
+SCF orbitals
++----+-------------+-------------+-------------+-------------+-------------+------------+------------+---------+------+-----+
+| MO | 0 Be 1s     | 0 Be 2s     | 0 Be 2px    | 0 Be 2py    | 0 Be 2pz    | 1 H 1s     | 2 H 1s     |    E    | irr  | occ |
++----+-------------+-------------+-------------+-------------+-------------+------------+------------+---------+------+-----+
+| 0  |    0.9955   |    0.0171   |     -0.0    |     -0.0    |     -0.0    |  -0.0003   |  -0.0003   |  -4.58  | A1g  |  2  |
+| 1  |   -0.2663   |    0.9826   |     -0.0    |     -0.0    |     -0.0    |   0.1926   |   0.1926   | -0.2621 | A1g  |  2  |
+| 2  |     0.0     |     0.0     |     0.0     |     0.0     |   -0.1988   |   0.684    |   -0.684   | -0.1274 | A1u  |  2  |
+| 3  |    0.087    |    -0.325   |     0.0     |     0.0     |     0.0     |   0.6811   |   0.6811   | -0.0259 | A1g  |  0  |
+| 4  |     0.0     |     0.0     |     0.0     |     1.0     |     0.0     |    0.0     |    0.0     |  0.2023 | E1uy |  0  |
+| 5  |     0.0     |     0.0     |     1.0     |     0.0     |     0.0     |    0.0     |    0.0     |  0.2023 | E1ux |  0  |
+| 6  |     0.0     |     0.0     |     0.0     |     0.0     |    0.9822   |   0.1852   |  -0.1852   |  0.2062 | A1u  |  0  |
++----+-------------+-------------+-------------+-------------+-------------+------------+------------+---------+------+-----+
+Hartree-Fock energy -15.117248 
+
+
+start tapering... 
+
+Z2 symmetries found:
+ZIIZZZIIZZ
+ZIZIIZIZII
+ZZIIIZZIII
+single qubit operators found:
+IIIIIIIIIX
+IIIIIIIXII
+IIIIIIXIII
+cliffords found:
+ZIIZZZIIZZ	(0.7071067811865475+0j)
+IIIIIIIIIX	(0.7071067811865475+0j)
+
+ZIZIIZIZII	(0.7071067811865475+0j)
+IIIIIIIXII	(0.7071067811865475+0j)
+
+ZZIIIZZIII	(0.7071067811865475+0j)
+IIIIIIXIII	(0.7071067811865475+0j)
+
+single-qubit list: [0, 2, 3]
+Number of qubits of tapered qubit operator: 7
+Number of qubits of tapered qubit operator: 7
+Number of qubits of tapered qubit operator: 7
+Number of qubits of tapered qubit operator: 7
+Number of qubits of tapered qubit operator: 7
+Number of qubits of tapered qubit operator: 7
+Number of qubits of tapered qubit operator: 7
+Number of qubits of tapered qubit operator: 7
+=== GROUND STATE ENERGY ===
+ 
+* Electronic ground state energy (Hartree): -16.782682037199
+  - computed part:      -2.584352186796
+  - frozen energy part: -14.198329850403
+  - particle hole part: 0.0
+~ Nuclear repulsion energy (Hartree): 1.285144655091
+> Total ground state energy (Hartree): -15.497537382108
+Lowest eigenvalue of the 0-th tapered operator (computed part) is -2.584352186796-0.000000000000j
+Lowest eigenvalue of the 1-th tapered operator (computed part) is -2.274617521416-0.000000000000j
+Lowest eigenvalue of the 2-th tapered operator (computed part) is -2.471067214802+0.000000000000j
+Lowest eigenvalue of the 3-th tapered operator (computed part) is -2.471067214802-0.000000000000j
+Lowest eigenvalue of the 4-th tapered operator (computed part) is -2.584304088127-0.000000000000j
+Lowest eigenvalue of the 5-th tapered operator (computed part) is -2.274747496716-0.000000000000j
+Lowest eigenvalue of the 6-th tapered operator (computed part) is -2.472166569076-0.000000000000j
+Lowest eigenvalue of the 7-th tapered operator (computed part) is -2.472166569076+0.000000000000j
+The 0-th tapered operator matches original ground state energy, with corresponding symmetry sector of [1, 1, 1]
+
+
+...finish tapering 
+
+
+Hartree-Fock energy -15.117248 
+
+Hartree-Fock circuit
+          
+q_0: ─────
+          
+q_1: ─────
+     ┌───┐
+q_2: ┤ X ├
+     └───┘
+q_3: ─────
+          
+q_4: ─────
+          
+q_5: ─────
+          
+q_6: ─────
+          
++--------+-------------+-----+------------+-----------+---------+---------+---------+
+| method | Energy [Ha] |  N  | S^2 [hbar] | Sz [hbar] | Dx [Ha] | Dy [Ha] | Dz [Ha] |
++--------+-------------+-----+------------+-----------+---------+---------+---------+
+|  VQE   |  -15.380836 | 4.0 |    6.0     |    -2.0   |   0.0   |   0.0   |   0.0   |
+|  FCI   |  -15.497537 | 4.0 |    0.0     |    0.0    |   0.0   |   0.0   |   0.0   |
++--------+-------------+-----+------------+-----------+---------+---------+---------+
