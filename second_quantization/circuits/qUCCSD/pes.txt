@@ -1,91 +1,110 @@
-Bond distance: 4.5
+Bond distance: 3.3
 SCF orbitals
-+----+-------------+-------------+-------------+-------------+-------------+------------+------------+---------+------+-----+
-| MO | 0 Be 1s     | 0 Be 2s     | 0 Be 2px    | 0 Be 2py    | 0 Be 2pz    | 1 H 1s     | 2 H 1s     |    E    | irr  | occ |
-+----+-------------+-------------+-------------+-------------+-------------+------------+------------+---------+------+-----+
-| 0  |    0.9955   |    0.017    |     -0.0    |     -0.0    |     -0.0    |  -0.0001   |  -0.0001   | -4.5436 | A1g  |  2  |
-| 1  |   -0.2794   |    1.0322   |     -0.0    |     -0.0    |     -0.0    |   0.0355   |   0.0355   | -0.2526 | A1g  |  2  |
-| 2  |     0.0     |     0.0     |     0.0     |     0.0     |   -0.0323   |   0.7064   |  -0.7064   |  -0.113 | A1u  |  2  |
-| 3  |    0.0164   |   -0.0609   |     0.0     |     0.0     |     0.0     |   0.7062   |   0.7062   | -0.0534 | A1g  |  0  |
-| 4  |     0.0     |     0.0     |     0.0     |     1.0     |     0.0     |    0.0     |    0.0     |  0.2188 | E1uy |  0  |
-| 5  |     0.0     |     0.0     |     1.0     |     0.0     |     0.0     |    0.0     |    0.0     |  0.2188 | E1ux |  0  |
-| 6  |     0.0     |     0.0     |     0.0     |     0.0     |    0.9996   |   0.0325   |  -0.0325   |  0.2189 | A1u  |  0  |
-+----+-------------+-------------+-------------+-------------+-------------+------------+------------+---------+------+-----+
-Hartree-Fock energy -15.088101 
++----+------------+------------+------------+------------+------------+------------+------------+----------+-----+-----+
+| MO | 0 O 1s     | 0 O 2s     | 0 O 2px    | 0 O 2py    | 0 O 2pz    | 1 H 1s     | 2 H 1s     |    E     | irr | occ |
++----+------------+------------+------------+------------+------------+------------+------------+----------+-----+-----+
+| 0  |   0.9972   |   0.0118   |    0.0     |    0.0     |    -0.0    |    -0.0    |    -0.0    | -20.5549 |  A1 |  2  |
+| 1  |   -0.249   |   1.0277   |    0.0     |    0.0     |    0.0     |   0.002    |   0.002    | -1.1346  |  A1 |  2  |
+| 2  |    0.0     |    0.0     |    1.0     |    0.0     |    0.0     |    0.0     |    0.0     | -0.4179  |  B2 |  2  |
+| 3  |    -0.0    |   0.0002   |    0.0     |    0.0     |   0.9997   |   -0.013   |   -0.013   | -0.4178  |  A1 |  2  |
+| 4  |    0.0     |    0.0     |    -0.0    |   0.0273   |    0.0     |   0.7068   |  -0.7068   | -0.1366  |  B1 |  2  |
+| 5  |   0.0022   |  -0.0105   |    0.0     |    0.0     |   0.0235   |   0.7069   |   0.7069   | -0.0349  |  A1 |  0  |
+| 6  |    -0.0    |    -0.0    |    -0.0    |   0.9996   |    -0.0    |  -0.0239   |   0.0239   |  0.2252  |  B1 |  0  |
++----+------------+------------+------------+------------+------------+------------+------------+----------+-----+-----+
+Hartree-Fock energy -74.979984 
 
 
 start tapering... 
 
 Z2 symmetries found:
-ZIIZZZIIZZ
-ZIZIIZIZII
-ZZIIIZZIII
+IIIZIIIZ
+ZZZIZZZI
 single qubit operators found:
-IIIIIIIIIX
-IIIIIIIXII
-IIIIIIXIII
+IIIIIIIX
+IIIIIIXI
 cliffords found:
-ZIIZZZIIZZ	(0.7071067811865475+0j)
-IIIIIIIIIX	(0.7071067811865475+0j)
+IIIZIIIZ	(0.7071067811865475+0j)
+IIIIIIIX	(0.7071067811865475+0j)
 
-ZIZIIZIZII	(0.7071067811865475+0j)
-IIIIIIIXII	(0.7071067811865475+0j)
+ZZZIZZZI	(0.7071067811865475+0j)
+IIIIIIXI	(0.7071067811865475+0j)
 
-ZZIIIZZIII	(0.7071067811865475+0j)
-IIIIIIXIII	(0.7071067811865475+0j)
-
-single-qubit list: [0, 2, 3]
-Number of qubits of tapered qubit operator: 7
-Number of qubits of tapered qubit operator: 7
-Number of qubits of tapered qubit operator: 7
-Number of qubits of tapered qubit operator: 7
-Number of qubits of tapered qubit operator: 7
-Number of qubits of tapered qubit operator: 7
-Number of qubits of tapered qubit operator: 7
-Number of qubits of tapered qubit operator: 7
+single-qubit list: [0, 1]
+Number of qubits of tapered qubit operator: 6
+Number of qubits of tapered qubit operator: 6
+Number of qubits of tapered qubit operator: 6
+Number of qubits of tapered qubit operator: 6
 === GROUND STATE ENERGY ===
  
-* Electronic ground state energy (Hartree): -16.497381826509
-  - computed part:      -2.433446550264
-  - frozen energy part: -14.063935276246
+* Electronic ground state energy (Hartree): -78.126351088346
+  - computed part:      -8.9521260202
+  - frozen energy part: -69.174225068145
   - particle hole part: 0.0
-~ Nuclear repulsion energy (Hartree): 0.99955695396
-> Total ground state energy (Hartree): -15.497824872549
-Lowest eigenvalue of the 0-th tapered operator (computed part) is -2.433446550264-0.000000000000j
-Lowest eigenvalue of the 1-th tapered operator (computed part) is -2.122808219021-0.000000000000j
-Lowest eigenvalue of the 2-th tapered operator (computed part) is -2.319769760125+0.000000000000j
-Lowest eigenvalue of the 3-th tapered operator (computed part) is -2.319769760125+0.000000000000j
-Lowest eigenvalue of the 4-th tapered operator (computed part) is -2.433446466020-0.000000000000j
-Lowest eigenvalue of the 5-th tapered operator (computed part) is -2.122812188578-0.000000000000j
-Lowest eigenvalue of the 6-th tapered operator (computed part) is -2.319815495913-0.000000000000j
-Lowest eigenvalue of the 7-th tapered operator (computed part) is -2.319815495913-0.000000000000j
-The 0-th tapered operator matches original ground state energy, with corresponding symmetry sector of [1, 1, 1]
+~ Nuclear repulsion energy (Hartree): 2.66736654834
+> Total ground state energy (Hartree): -75.458984540005
+Lowest eigenvalue of the 0-th tapered operator (computed part) is -8.952056150505-0.000000000000j
+Lowest eigenvalue of the 1-th tapered operator (computed part) is -8.952069461714-0.000000000000j
+Lowest eigenvalue of the 2-th tapered operator (computed part) is -8.951991386225-0.000000000000j
+Lowest eigenvalue of the 3-th tapered operator (computed part) is -8.952126020191+0.000000000000j
+The 3-th tapered operator matches original ground state energy, with corresponding symmetry sector of [-1, -1]
 
 
 ...finish tapering 
 
 
-Hartree-Fock energy -15.088101 
+Hartree-Fock energy -74.979984 
 
 Hartree-Fock circuit
-          
-q_0: ─────
-          
-q_1: ─────
      ┌───┐
-q_2: ┤ X ├
+q_0: ┤ X ├
+     ├───┤
+q_1: ┤ X ├
      └───┘
-q_3: ─────
-          
+q_2: ─────
+     ┌───┐
+q_3: ┤ X ├
+     └───┘
 q_4: ─────
           
 q_5: ─────
           
-q_6: ─────
-          
-+--------+-------------+-----+------------+-----------+---------+---------+---------+
-| method | Energy [Ha] |  N  | S^2 [hbar] | Sz [hbar] | Dx [Ha] | Dy [Ha] | Dz [Ha] |
-+--------+-------------+-----+------------+-----------+---------+---------+---------+
-|  VQE   |  -15.497427 | 4.0 |   8e-06    |    0.0    |   0.0   |   0.0   |   0.0   |
-|  FCI   |  -15.497825 | 4.0 |    0.0     |    0.0    |   0.0   |   0.0   |   0.0   |
-+--------+-------------+-----+------------+-----------+---------+---------+---------+
++--------+-------------+-----+------------+-----------+---------+---------+----------+
+| method | Energy [Ha] |  N  | S^2 [hbar] | Sz [hbar] | Dx [Ha] | Dy [Ha] | Dz [Ha]  |
++--------+-------------+-----+------------+-----------+---------+---------+----------+
+|  VQE   |  -75.458916 | 6.0 |  1.999628  |    0.0    |   0.0   |   0.0   | 6.9e-05  |
+|  FCI   |  -75.458985 | 6.0 |    0.0     |    0.0    |   0.0   |   0.0   | -2.7e-05 |
++--------+-------------+-----+------------+-----------+---------+---------+----------+
+
+Circuit
+     ┌───┐┌──────────────┐┌──────────────┐┌──────────────┐┌──────────────┐┌──────────────┐┌──────────────┐┌──────────────┐┌──────────────┐┌──────────────┐┌──────────────┐┌──────────────┐┌──────────────┐┌──────────────┐»
+q_0: ┤ X ├┤0             ├┤0             ├┤0             ├┤0             ├┤0             ├┤0             ├┤0             ├┤0             ├┤0             ├┤0             ├┤0             ├┤0             ├┤0             ├»
+     ├───┤│              ││              ││              ││              ││              ││              ││              ││              ││              ││              ││              ││              ││              │»
+q_1: ┤ X ├┤1             ├┤1             ├┤1             ├┤1             ├┤1             ├┤1             ├┤1             ├┤1             ├┤1             ├┤1             ├┤1             ├┤1             ├┤1             ├»
+     └───┘│              ││              ││              ││              ││              ││              ││              ││              ││              ││              ││              ││              ││              │»
+q_2: ─────┤2             ├┤2             ├┤2             ├┤2             ├┤2             ├┤2             ├┤2             ├┤2             ├┤2             ├┤2             ├┤2             ├┤2             ├┤2             ├»
+     ┌───┐│  Evolution^1 ││  Evolution^1 ││  Evolution^1 ││  Evolution^1 ││  Evolution^1 ││  Evolution^1 ││  Evolution^1 ││  Evolution^1 ││  Evolution^1 ││  Evolution^1 ││  Evolution^1 ││  Evolution^1 ││  Evolution^1 │»
+q_3: ┤ X ├┤3             ├┤3             ├┤3             ├┤3             ├┤3             ├┤3             ├┤3             ├┤3             ├┤3             ├┤3             ├┤3             ├┤3             ├┤3             ├»
+     └───┘│              ││              ││              ││              ││              ││              ││              ││              ││              ││              ││              ││              ││              │»
+q_4: ─────┤4             ├┤4             ├┤4             ├┤4             ├┤4             ├┤4             ├┤4             ├┤4             ├┤4             ├┤4             ├┤4             ├┤4             ├┤4             ├»
+          │              ││              ││              ││              ││              ││              ││              ││              ││              ││              ││              ││              ││              │»
+q_5: ─────┤5             ├┤5             ├┤5             ├┤5             ├┤5             ├┤5             ├┤5             ├┤5             ├┤5             ├┤5             ├┤5             ├┤5             ├┤5             ├»
+          └──────────────┘└──────────────┘└──────────────┘└──────────────┘└──────────────┘└──────────────┘└──────────────┘└──────────────┘└──────────────┘└──────────────┘└──────────────┘└──────────────┘└──────────────┘»
+«     ┌──────────────┐┌──────────────┐┌──────────────┐
+«q_0: ┤0             ├┤0             ├┤0             ├
+«     │              ││              ││              │
+«q_1: ┤1             ├┤1             ├┤1             ├
+«     │              ││              ││              │
+«q_2: ┤2             ├┤2             ├┤2             ├
+«     │  Evolution^1 ││  Evolution^1 ││  Evolution^1 │
+«q_3: ┤3             ├┤3             ├┤3             ├
+«     │              ││              ││              │
+«q_4: ┤4             ├┤4             ├┤4             ├
+«     │              ││              ││              │
+«q_5: ┤5             ├┤5             ├┤5             ├
+«     └──────────────┘└──────────────┘└──────────────┘
++--------+-------------+-----+------------+-----------+---------+---------+----------+
+| method | Energy [Ha] |  N  | S^2 [hbar] | Sz [hbar] | Dx [Ha] | Dy [Ha] | Dz [Ha]  |
++--------+-------------+-----+------------+-----------+---------+---------+----------+
+|  VQE   |  -75.458916 | 6.0 |  1.999628  |    0.0    |   0.0   |   0.0   | 6.9e-05  |
+|  FCI   |  -75.458985 | 6.0 |    0.0     |    0.0    |   0.0   |   0.0   | -2.7e-05 |
++--------+-------------+-----+------------+-----------+---------+---------+----------+
