@@ -134,7 +134,7 @@ np.savetxt('bh_scf_energy.txt',E_scf)
 
 def geometry_hf(d):
     return "F 0.0000 0.0000 0.0000; H 0.0000 0.0000 {0}".format(d)
-dist_list = [0.5,0.7,0.9,1.1,1.3,1.5,1.7,1.9,2.1,2.3,2.5,2.7,2.9,3.1,3.3,3.5,3.7,3.9,4.1,4.3,4.5]
+dist_list = [0.7,0.9,1.1,1.3,1.5,1.7,1.9,2.1,2.3,2.5,2.7,2.9,3.1,3.3,3.5,3.7,3.9,4.1,4.3,4.5]
 mo_eig,mo_irr,no_occ,no_irr,E_scf = perform_computations('/Users/mario/Documents/GitHub/QITE/qite_es/scf_calculations/SCF_FCI/hf',geometry_hf,dist_list,'coov',{'A1':6,'E1x':2,'E1y':2})
 
 outf = open('hf_scf_data.txt','w')

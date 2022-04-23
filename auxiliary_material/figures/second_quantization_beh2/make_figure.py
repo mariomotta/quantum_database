@@ -130,7 +130,7 @@ for i,depth in enumerate(depth_list):
 
 path = '/Users/mario/Documents/GitHub/VATech/quantum_database/second_quantization/circuits/qUCCSD/'
 
-depth_list = [1]
+depth_list = [1,2]
 ndist,ndepth = len(dist_list),len(depth_list)
 
 data = np.zeros((ndist,ndepth,4,2))
