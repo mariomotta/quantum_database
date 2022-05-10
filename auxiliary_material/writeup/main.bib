@@ -1,0 +1,766 @@
+@string{JCP="J. Chem. Phys"}
+@string{ACP="Adv. Chem. Phys"}
+@string{ACR="Acc. Chem. Res"}
+@string{JPC="J. Phys. Chem"}
+@string{NatComm="Nat. Commun"}
+@string{NatChem="Nat. Chem"}
+@string{NatPhys="Nat. Phys"}
+@string{ChemRev="Chem. Rev"}
+@string{IJC="Isr. J. Chem"}
+@string{JStatMech="J. Stat. Mech"}
+@string{SciRep="Sci. Rep"}
+@string{PR="Phys. Rev"}
+@string{PRAppl="Phys. Rev. Appl"}
+@string{PRX="Phys. Rev. X"}
+@string{JPSJ="J. Phys. Soc. Jpn"}
+@string{PRL="Phys. Rev. Lett"}
+@string{PRA="Phys. Rev. A"}
+@string{RMP="Rev. Mod. Phys"}
+@string{SIAM="SIAM J. Comput"}
+@string{IJTP="Int. J. Theor. Phys"}
+@string{JMP="J. Math. Phys"}
+@string{PRR="Phys. Rev. Research"}
+@string{JCTC="J. Chem. Theory Comput"}
+@string{WIRES="WIREs Comput. Mol. Sci"}
+@string{NJP="New J. Phys"}
+@string{IJQI="Int. J. Quant. Inf"}
+@string{IRPC="Int. Rev. Phys. Chem"}
+@string{QST="Quant. Sci. Tech"}
+@string{QIC="Quant. Info. Comput"}
+@string{IJQC="Int. J. Quant. Chem"}
+@string{NPJQI="npj Quantum Inf"}
+@string{NPJCM="npj Comput. Mater"}
+@string{RSA="Proc. Roy. Soc. London A, Math. Phys. Sci"}
+@string{QIP="Quantum Inf. Process"}
+@string{PRXQUANTUM="Phys. Rev. X Quantum"}
+@string{AnnPhys="Ann. Phys"}
+@string{CS="Chem. Sci"}
+@STRING {AAEJAF = "Astron. Astrophys"}
+@STRING {ABCNBP = "Anal. Bioanal. Chem"}
+@STRING {ACHRE4 = "Acc. Chem. Res"}
+@STRING {ACIEAY = "Angew. Chem., Int. Ed. Engl"}
+@STRING {AJCHAS = "Austral. J. Chem"}
+@STRING {ANALAO = "Analyst"}
+@STRING {APJSA2 = "Astron. J. Suppl. Ser"}
+@STRING {ASJOAB = "Astrophys. J"}
+@STRING {BACCAT = "Bull. Acad. Sci. USSR, Div. Chem. Sci"}
+@STRING {BCSJA8 = "Bull. Chem. Soc. Jpn"}
+@STRING {CEUJED = "Chem. Eur. J"}
+@STRING {CHBEAM = "Chem. Ber"}
+@STRING {CHPLBC = "Chem. Phys. Lett"}
+@STRING {CJCHAG = "Can. J. Chem"}
+@STRING {CHCOFS = "Chem. Comm"}
+@STRING {CHREAY = "Chem. Rev"}
+@STRING {CSRVBR = "Chem. Soc. Rev"}
+@STRING {CCCCAK = "Collect. Czech. Chem. Commun"}
+@STRING {CMPHC2 = "Chem. Phys"}
+@STRING {CMP="Comm. Math. Phys"}
+@STRING {COMPTC = "Comput. Theor. Chem"}
+@STRING {CPCHFT = "ChemPhysChem"}
+@STRING {CPHCBZ = "Comput. Phys. Commun"}
+@STRING {CCHRAM = "Coord. Chem. Rev"}
+@STRING {IJBMDR = "Int. J. Biol. Macromol"}
+@STRING {IJMPDN = "Int. J. Mass Spectrom. Ion Processes"}
+@STRING {IJQCB2 = "Int. J. Quantum Chem"}
+@STRING {IJQSDI = "Int. J. Quantum Chem. Symp"}
+@STRING {INOCAJ = "Inorg. Chem"}
+@STRING {IRPCDL = "Int. Rev. Phys. Chem"}
+@STRING {JACSAT = "J. Am. Chem. Soc"}
+@STRING {JCCCAT = "J. Chem. Soc., Chem. Commun"}
+@STRING {JCCHDD = "J. Comput. Chem"}
+@STRING {JCTCCE = "J. Chem. Theory Comput"}
+@STRING {JCSDAA = "J. Chem. Soc., Daldon Trans"}
+@STRING {JCFTBS = "J. Chem. Soc., Faraday Trans. II"}
+@STRING {JCFTEV = "J. Chem. Soc., Faraday Trans"}
+@STRING {JCPSA6 = "J. Chem. Phys"}
+@STRING {JESRAW = "J. Electr. Spectrosc. Rel. Phenomena"}
+@STRING {JMCHEG = "J. Math. Chem"}
+@STRING {JMCMAR = "J. Med. Chem"}
+@STRING {JMOBAK = "J. Mol. Biol"}
+@STRING {JMOSA3 = "J. Mol. Spectrosc"}
+@STRING {JMOSB4 = "J. Mol. Structure"}
+@STRING {JOCEAH = "J. Org. Chem"}
+@STRING {JPAMA4 = "J. Phys. B"}
+@STRING {JPAPEH = "J. Phys. B"}
+@STRING {JPCAFH = "J. Phys. Chem. A"}
+@STRING {JPCBFK = "J. Phys. Chem. B"}
+@STRING {JPCCCK = "J. Phys. Chem. C"}
+@STRING {JPCHAX = "J. Phys. Chem."}
+@STRING {JPCLCD = "J. Phys. Chem. Lett"}
+@STRING {JPOCEE = "J. Phys. Org. Chem"}
+@STRING {JSTCAM = "J. Struct. Chem"}
+@STRING {JTCCHM = "J. Theor. Comp. Chem"}
+@STRING {MOPHAM = "Mol. Phys"}
+@STRING {OBCRAK = "Org. Biomol. Chem"}
+@STRING {ORGND7 = "Organometallics"}
+@STRING {JPOCEE = "J. Phys. Org. Chem"}
+@STRING {JSTCAM = "J. Struct. Chem"}
+@STRING {JTCCHM = "J. Theor. Comp. Chem"}
+@STRING {MOPHAM = "Mol. Phys"}
+@STRING {ORGND7 = "Organometallics"}
+@STRING {ORLEF7 = "Org. Lett"}
+@STRING {PPCPFQ = "Phys. Chem. Chem. Phys"}
+@STRING {PRLTAO = "Phys. Rev. Lett"}
+@STRING {PHYSRV = "Phys. Rev"}
+@STRING {PLRAAN = "Phys. Rev. A"}
+@STRING {PRBMDO = "Phys. Rev. B"}
+@STRING {POLNCL = "PLoS ONE"}
+@STRING {PNASA6 = "Proc. Natl. Acad. Sci. USA"}
+@STRING {PRCIEI = "Protein Sci"}
+@STRING {RJICAQ = "Russ. J. Inorg. Chem"}
+@STRING {RJPCAR = "Russ. J. Phys. Chem"}
+@STRING {SAMCAS = "Spectrochim. Acta, Part A"}
+@STRING {SCIEAS = "Science"}
+@STRING {SJCCDA = "Sov. J. Coord. Chem"}
+@STRING {SSCOA4 = "Solid State Commun"}
+@STRING {SUSCAS = "Surface Science"}
+@STRING {TCACFW = "Theor. Chem. Acc"}
+@STRING {TCHAAM = "Theor. Chim. Acta"}
+@STRING {TEXCAK = "Theor. Exper. Chem"}
+@STRING {THEODJ = "J. Mol. Struct. THEOCHEM"}
+@STRING {ZSTKAI = "Zh. Strukt. Khim"}
+@STRING {WCMS = "WIREs Comput. Mol. Sci"}
+@STRING {JCompPhys = "J. Comp. Phys"}
+@STRING {JCompChem = "J. Comp. Chem"}
+@STRING {IJQC = "Int. J. Quantum Chem"}
+@STRING {TCA = "Theoret. Chim. Acta"}
+@STRING {JCP = "J. Chem. Phys"}
+@STRING {JACS = "J. Am. Chem. Soc"}
+@STRING {JPhysChem = "J. Phys. Chem"}
+@STRING {MolPhys = "Mol. Phys"}
+@STRING {RevModPhys = "Rev. Mod. Phys"}
+@STRING {AnnRevPhysChem = "Ann. Rev. Phys. Chem"}
+@STRING {JMedChem = "J. Med. Chem"}
+@STRING {JMolBiol = "J. Mol. Biol"}
+@STRING {CPL = "Chem. Phys. Lett"}
+@STRING {AdvQuantumChem = "Adv. Quantum Chem"}
+@STRING {JPC = "J. Phys. Chem"}
+@STRING {AdvChemPhys = "Adv. Chem. Phys"}
+@STRING {PCCP = "Phys. Chem. Chem. Phys"}
+
+@article{georgescu2014quantum,
+  title={Quantum simulation},
+  author={Georgescu, Iulia M and Ashhab, Sahel and Nori, Franco},
+  journal=RMP,
+  volume={86},
+  number={1},
+  pages={153},
+  year={2014},
+  publisher={APS},
+  url={https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.86.153}
+}
+
+@article{bauer2020quantum,
+  title={Quantum algorithms for quantum chemistry and quantum materials science},
+  author={Bauer, Bela and Bravyi, Sergey and Motta, Mario and Kin-Lic Chan, Garnet},
+  journal=ChemRev,
+  volume={120},
+  number={22},
+  pages={12685--12717},
+  year={2020},
+  publisher={ACS Publications},
+  url={https://pubs.acs.org/doi/10.1021/acs.chemrev.9b00829}
+}
+
+@article{cao2019quantum,
+  title={Quantum chemistry in the age of quantum computing},
+  author={Cao, Yudong and Romero, Jonathan and Olson, Jonathan P and Degroote, Matthias and Johnson, Peter D and Kieferov{\'a}, M{\'a}ria and Kivlichan, Ian D and Menke, Tim and Peropadre, Borja and Sawaya, Nicolas PD and others},
+  journal=ChemRev,
+  volume={119},
+  number={19},
+  pages={10856--10915},
+  year={2019},
+  publisher={ACS Publications},
+  url={https://pubs.acs.org/doi/10.1021/acs.chemrev.8b00803}
+}
+
+@article{mcardle2020quantum,
+  title = {Quantum computational chemistry},
+  author = {McArdle, Sam and Endo, Suguru and Aspuru-Guzik, Al\'an and Benjamin, Simon C. and Yuan, Xiao},
+  journal = RMP,
+  volume = {92},
+  issue = {1},
+  pages = {015003},
+  numpages = {51},
+  year = {2020},
+  month = {Mar},
+  publisher = {American Physical Society},
+  doi = {10.1103/RevModPhys.92.015003},
+  url = {https://link.aps.org/doi/10.1103/RevModPhys.92.015003}
+}
+
+
+@article{motta2021emerging,
+  title={Emerging quantum computing algorithms for quantum chemistry},
+  author={Motta, Mario and Rice, Julia E},
+  journal=WIRES,
+  pages={e1580},
+  year={2021},
+  url={https://wires.onlinelibrary.wiley.com/doi/abs/10.1002/wcms.1580},
+  publisher={Wiley Online Library}
+}
+
+@article{cerezo2020variational,
+  title={Variational quantum algorithms},
+  author={Cerezo, Marco and Arrasmith, Andrew and Babbush, Ryan and Benjamin, Simon C and Endo, Suguru and Fujii, Keisuke and McClean, Jarrod R and Mitarai, Kosuke and Yuan, Xiao and Cincio, Lukasz and others},
+  journal={Nat. Rev. Phys},
+  pages={1--20},
+  year={2021},
+  publisher={Nature Publishing Group},
+  url={https://www.nature.com/articles/s42254-021-00348-9}
+}
+
+@article{friesner2005ab,
+  title={Ab initio quantum chemistry: Methodology and applications},
+  author={Friesner, Richard A},
+  journal=PNAS,
+  volume={102},
+  number={19},
+  pages={6648--6653},
+  year={2005},
+  publisher={National Acad Sciences},
+  url={https://www.pnas.org/content/102/19/6648.short}
+}
+
+@misc{tammaro2022github,
+  title  = {Github repository: \url{https://github.com/lsn-tmm}},
+  author = {Tammaro, Alessandro and others},
+  year   = 2022,
+  url    = {https://github.com/lsn-tmm}
+}
+
+@article{helgaker2012recent,
+  title={Recent advances in wave function-based methods of molecular-property calculations},
+  author={Helgaker, Trygve and Coriani, Sonia and J{\o}rgensen, Poul and Kristensen, Kasper and Olsen, Jeppe and Ruud, Kenneth},
+  journal=ChemRev,
+  volume={112},
+  number={1},
+  pages={543--631},
+  year={2012},
+  publisher={ACS Publications},
+  url={https://doi.org/10.1021/cr2002239}
+}
+
+@book{helgaker2014molecular,
+  title={Molecular electronic-structure theory},
+  author={Helgaker, Trygve and Jorgensen, Poul and Olsen, Jeppe},
+  year={2014},
+  publisher={John Wiley \& Sons}
+}
+
+@article{mcclean2017hybrid,
+  title={Hybrid quantum-classical hierarchy for mitigation of decoherence and determination of excited states},
+  author={McClean, Jarrod R and Kimchi-Schwartz, Mollie E and Carter, Jonathan and De Jong, Wibe A},
+  journal=PRA,
+  volume={95},
+  number={4},
+  pages={042308},
+  year={2017},
+  publisher={APS},
+  url={https://journals.aps.org/pra/abstract/10.1103/PhysRevA.95.042308}
+}
+
+@article{colless2018computation,
+  title     = {Computation of Molecular Spectra on a Quantum Processor with an Error-Resilient Algorithm},
+  author    = {Colless, James I and Ramasesh, Vinay V and Dahlen, Dar and Blok, Machiel S and Kimchi-Schwartz, ME and McClean, JR and Carter, J and De Jong, WA and Siddiqi, I},
+  journal   = PRX,
+  volume    = {8},
+  number    = {1},
+  pages     = {011021--011028},
+  year      = {2018},
+  url       = {https://journals.aps.org/prx/abstract/10.1103/PhysRevX.8.011021},
+  publisher = {APS}
+}
+
+@article{huggins2020non,
+  title={A non-orthogonal variational quantum eigensolver},
+  author={Huggins, William J and Lee, Joonho and Baek, Unpil and O’Gorman, Bryan and Whaley, K Birgitta},
+  journal=NJP,
+  volume={22},
+  number={7},
+  pages={073009},
+  year={2020},
+  url={https://iopscience.iop.org/article/10.1088/1367-2630/ab867b},
+  publisher={IOP Publishing}
+}
+
+@Article{peruzzo2014variational,
+ author  = {Peruzzo, Alberto and McClean, Jarrod and Shadbolt, Peter and Yung, Man-Hong and Zhou, Xiao-Qi and Love, Peter J. and Aspuru-Guzik, Al{\'a}n and O'Brien, Jeremy L.},
+ title   = {A variational eigenvalue solver on a photonic quantum processor},
+ journal = {Nat. Commun},
+ year    = {2014},
+ volume  = {5},
+ number  = {1},
+ pages   = {4213},
+ issn    = {2041-1723},
+ doi     = {10.1038/ncomms5213},
+ url     = {https://doi.org/10.1038/ncomms5213}
+}
+
+@Article{kandala2017hardware,
+author    = {Kandala, Abhinav and Mezzacapo, Antonio and Temme, Kristan and Takita, Maika and Brink, Markus and Chow, Jerry M. and Gambetta, Jay M.},
+ title    = {Hardware-efficient variational quantum eigensolver for small molecules and quantum magnets},
+ journal  = {Nature},
+ year     = {2017},
+ volume   = {549},
+ number   = {7671},
+ pages    = {242-246},
+ abstract = {The ground-state energy of small molecules is determined efficiently using six qubits of a superconducting quantum processor.},
+ issn     = {1476-4687},
+ doi      = {10.1038/nature23879},
+ url      = {https://doi.org/10.1038/nature23879}
+}
+
+@article{farhi2014quantum,
+  title   = {A Quantum Approximate Optimization Algorithm},
+  author  = {Farhi, Edward and Goldstone, Jeffrey and Gutmann, Sam},
+  journal = {arXiv:1411.4028},
+  url     = {https://arxiv.org/abs/1411.4028},
+  year    = {2014}
+}
+
+@article{romero2018strategies,
+  title     = {Strategies for Quantum Computing Molecular Energies Using the Unitary Coupled Cluster {A}nsatz},
+  author    = {Romero, Jonathan and Babbush, Ryan and McClean, Jarrod R and Hempel, Cornelius and Love, Peter J and Aspuru-Guzik, Al{\'a}n},
+  journal   = {Quantum Sci. Technol.},
+  volume    = {4},
+  number    = {1},
+  pages     = {014008--014026},
+  year      = {2018},
+  url       = {https://iopscience.iop.org/article/10.1088/2058-9565/aad3e4/meta},
+  publisher = {IOP Publishing}
+}
+
+@article{mcclean2016theory,
+  title={The theory of variational hybrid quantum-classical algorithms},
+  author={McClean, Jarrod R and Romero, Jonathan and Babbush, Ryan and Aspuru-Guzik, Al{\'a}n},
+  journal=NJP,
+  volume={18},
+  number={2},
+  pages={023023},
+  year={2016},
+  publisher={IOP Publishing},
+  url={https://iopscience.iop.org/article/10.1088/1367-2630/18/2/023023}
+}
+
+@article{takeshita2020increasing,
+  title     = {Increasing the representation accuracy of quantum simulations of chemistry without extra quantum resources},
+  author    = {Takeshita, Tyler and Rubin, Nicholas C and Jiang, Zhang and Lee, Eunseok and Babbush, Ryan and McClean, Jarrod R},
+  journal   = PRX,
+  volume    = {10},
+  number    = {1},
+  pages     = {011004},
+  year      = {2020},
+  publisher = {APS},
+  url       = {https://journals.aps.org/prx/pdf/10.1103/PhysRevX.10.011004}
+}
+
+@article{eddins2021doubling,
+  title={Doubling the size of quantum simulators by entanglement forging},
+  author={Eddins, Andrew and Motta, Mario and Gujarati, Tanvi P and Bravyi, Sergey and Mezzacapo, Antonio and Hadfield, Charles and Sheldon, Sarah},
+  journal={arXiv:2104.10220},
+  year={2021},
+  url={https://arxiv.org/abs/2104.10220}
+}
+
+@article{bravyi2016trading,
+  title={Trading classical and quantum computational resources},
+  author={Bravyi, Sergey and Smith, Graeme and Smolin, John A},
+  journal=PRX,
+  volume={6},
+  number={2},
+  pages={021043},
+  year={2016},
+  publisher={APS},
+  url={https://journals.aps.org/prx/abstract/10.1103/PhysRevX.6.021043}
+}
+
+@article{peng2020simulating,
+  title={Simulating large quantum circuits on a small quantum computer},
+  author={Peng, Tianyi and Harrow, Aram W and Ozols, Maris and Wu, Xiaodi},
+  journal={Physical Review Letters},
+  volume={125},
+  number={15},
+  pages={150504},
+  year={2020},
+  publisher={APS},
+  url={https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.125.150504}
+}
+
+@article{yamazaki2018towards,
+  title={Towards the practical application of near-term quantum computers in quantum chemistry simulations: A problem decomposition approach},
+  author={Yamazaki, Takeshi and Matsuura, Shunji and Narimani, Ali and Saidmuradov, Anushervon and Zaribafiyan, Arman},
+  journal={arXiv:1806.01305},
+  year={2018}
+}
+
+@article{kreula2016few,
+  title={Few-qubit quantum-classical simulation of strongly correlated lattice fermions},
+  author={Kreula, Juha M and Garc{\'\i}a-{\'A}lvarez, Laura and Lamata, Lucas and Clark, Stephen R and Solano, Enrique and Jaksch, Dieter},
+  journal={EPJ Quantum Technology},
+  volume={3},
+  number={1},
+  pages={1--19},
+  year={2016},
+  publisher={SpringerOpen},
+  url={https://epjquantumtechnology.springeropen.com/articles/10.1140/epjqt/s40507-016-0049-1}
+}
+
+@article{kawashima2021optimizing,
+  title={Optimizing electronic structure simulations on a trapped-ion quantum computer using problem decomposition},
+  author={Kawashima, Yukio and Lloyd, Erika and Coons, Marc P and Nam, Yunseong and Matsuura, Shunji and Garza, Alejandro J and Johri, Sonika and Huntington, Lee and Senicourt, Valentin and Maksymov, Andrii O and others},
+  journal=NatComm,
+  volume={4},
+  number={1},
+  pages={1--9},
+  year={2021},
+  publisher={Nature Publishing Group},
+  url={https://www.nature.com/articles/s42005-021-00751-9}
+}
+
+
+@article{mitarai2021constructing,
+  title={Constructing a virtual two-qubit gate by sampling single-qubit operations},
+  author={Mitarai, Kosuke and Fujii, Keisuke},
+  journal=NJP,
+  volume={23},
+  number={2},
+  pages={023021},
+  year={2021},
+  publisher={IOP Publishing},
+  url={https://iopscience.iop.org/article/10.1088/1367-2630/abd7bc/meta}
+}
+
+@article{yuan2021quantum,
+  title={Quantum simulation with hybrid tensor networks},
+  author={Yuan, Xiao and Sun, Jinzhao and Liu, Junyu and Zhao, Qi and Zhou, You},
+  journal=PRL,
+  volume={127},
+  number={4},
+  pages={040501},
+  year={2021},
+  publisher={APS},
+  url={https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.127.040501}
+}
+
+@article{knizia2013intrinsic,
+  title={Intrinsic atomic orbitals: An unbiased bridge between quantum theory and chemical concepts},
+  author={Knizia, Gerald},
+  journal=JCTC,
+  volume={9},
+  number={11},
+  pages={4834--4843},
+  year={2013},
+  publisher={ACS Publications},
+  url={https://pubs.acs.org/doi/abs/10.1021/ct400687b}
+}
+
+@article{senjean2020generalization,
+  title={Generalization of Intrinsic Orbitals to Kramers-Paired Quaternion Spinors, Molecular Fragments, and Valence Virtual Spinors},
+  author={Senjean, Bruno and Sen, Souloke and Repisky, Michal and Knizia, Gerald and Visscher, Lucas},
+  journal=JCTC,
+  volume={17},
+  number={3},
+  pages={1337--1354},
+  year={2021},
+  publisher={ACS Publications},
+  url={https://pubs.acs.org/doi/10.1021/acs.jctc.0c00964}
+}
+
+@article{schwilkIAO,
+author  = {Schwilk, Max and Ma, Qianli and Köppl, Christoph and Werner, Hans-Joachim},
+title   = {Scalable Electron Correlation Methods. 3. Efficient and Accurate Parallel Local Coupled Cluster with Pair Natural Orbitals (PNO-LCCSD)},
+journal = JCTC,
+volume  = {13},
+number  = {8},
+pages   = {3650-3675},
+year    = {2017},
+doi     = {10.1021/acs.jctc.7b00554},
+URL     = {https://doi.org/10.1021/acs.jctc.7b00554},
+}
+
+@Article{ManzIAO,
+author   = {Manz, Thomas A. and Limas, Nidia Gabaldon},
+title    = {Introducing DDEC6 atomic population analysis: part 1. Charge partitioning theory and methodology},
+journal  = {RSC Adv.},
+year     = {2016},
+volume   = {6},
+issue    = {53},
+pages    = {47771-47801},
+doi      = {10.1039/C6RA04656H},
+url      = {http://dx.doi.org/10.1039/C6RA04656H}
+}
+
+@article{WestIAO,
+author  = {West,Aaron C.  and Schmidt,Michael W.  and Gordon,Mark S.  and Ruedenberg,Klaus },
+title   = {A comprehensive analysis of molecule-intrinsic quasi-atomic, bonding, and correlating orbitals. I. Hartree-Fock wave functions},
+journal = JCP,
+volume  = {139},
+number  = {23},
+pages   = {234107},
+year    = {2013},
+doi     = {10.1063/1.4840776},
+URL     = {https://doi.org/10.1063/1.4840776},
+}
+
+@article{ParrishIAO,
+author  = {Parrish,Robert M.  and Sherrill,C. David },
+title   = {Spatial assignment of symmetry adapted perturbation theory interaction energy components: The atomic SAPT partition},
+journal = JCP,
+volume  = {141},
+number  = {4},
+pages   = {044115},
+year    = {2014},
+doi     = {10.1063/1.4889855},
+URL     = {https://doi.org/10.1063/1.4889855},
+}
+
+@article{ElviraIAO,
+author  = {Sayfutyarova, Elvira R. and Sun, Qiming and Chan, Garnet Kin-Lic and Knizia, Gerald},
+title   = {Automated Construction of Molecular Active Spaces from Atomic Valence Orbitals},
+journal = JCTC,
+volume  = {13},
+number  = {9},
+pages   = {4063-4078},
+year    = {2017},
+doi     = {10.1021/acs.jctc.7b00128},
+URL     = {https://doi.org/10.1021/acs.jctc.7b00128},
+}
+
+@article{SchneiderIAO,
+author   = {Schneider, Wolfgang B. and Bistoni, Giovanni and Sparta, Manuel and Saitow, Masaaki and Riplinger, Christoph and Auer, Alexander A. and Neese, Frank},
+title    = {Decomposition of Intermolecular Interaction Energies within the Local Pair Natural Orbital Coupled Cluster Framework},
+journal  = JCTC,
+volume   = {12},
+number   = {10},
+pages    = {4778-4792},
+year     = {2016},
+doi      = {10.1021/acs.jctc.6b00523},
+URL      = {https://doi.org/10.1021/acs.jctc.6b00523},
+}
+
+@article{barison2020quantum,
+  title={Quantum simulations of molecular systems with intrinsic atomic orbitals},
+  author={Barison, Stefano and Galli, Davide Emilio and Motta, Mario},
+  journal={arXiv:2011.08137},
+  year={2020},
+  url={https://arxiv.org/abs/2011.08137}
+}
+
+
+@article{angeli2001n,
+  title={N-electron valence state perturbation theory: a fast implementation of the strongly contracted variant},
+  author={Angeli, Celestino and Cimiraglia, Renzo and Malrieu, Jean-Paul},
+  journal=CPL,
+  volume={350},
+  number={3-4},
+  pages={297--305},
+  year={2001},
+  publisher={Elsevier},
+  url={https://www.sciencedirect.com/science/article/abs/pii/S0009261401013033}
+}
+
+@article{angeli2001introduction,
+  title={Introduction of n-electron valence states for multireference perturbation theory},
+  author={Angeli, Celestino and Cimiraglia, Renzo and Evangelisti, S and Leininger, T and Malrieu, J-P},
+  journal=JCP,
+  volume={114},
+  number={23},
+  pages={10252--10264},
+  year={2001},
+  publisher={American Institute of Physics},
+  url={https://aip.scitation.org/doi/10.1063/1.1361246}
+}
+
+@article{dyall1995choice,
+  title={The choice of a zeroth-order Hamiltonian for second-order perturbation theory with a complete active space self-consistent-field reference function},
+  author={Dyall, Kenneth G},
+  journal=JCP,
+  volume={102},
+  number={12},
+  pages={4909--4918},
+  year={1995},
+  publisher={American Institute of Physics},
+  url={https://aip.scitation.org/doi/10.1063/1.469539}
+}
+
+@article{sokolov2016time,
+  title={A time-dependent formulation of multi-reference perturbation theory},
+  author={Sokolov, Alexander Yu and Chan, Garnet Kin-Lic},
+  journal=JCP,
+  volume={144},
+  number={6},
+  pages={064102},
+  year={2016},
+  publisher={AIP Publishing LLC},
+  url={https://aip.scitation.org/doi/10.1063/1.4941606}
+}
+
+@article{sokolov2017time,
+  title={Time-dependent N-electron valence perturbation theory with matrix product state reference wavefunctions for large active spaces and basis sets: Applications to the chromium dimer and all-trans polyenes},
+  author={Sokolov, Alexander Yu and Guo, Sheng and Ronca, Enrico and Chan, Garnet Kin-Lic},
+  journal=JCP,
+  volume={146},
+  number={24},
+  pages={244102},
+  year={2017},
+  publisher={AIP Publishing LLC},
+  url={https://aip.scitation.org/doi/10.1063/1.4986975}
+}
+
+@techreport{johnson1999nist,
+  title  = {NIST 101. Computational chemistry comparison and benchmark database},
+  institution = {National Institute of Standards and Technology},
+  author = {Johnson III, Russell D},
+  year   = {2019},
+  url    = {http://cccbdb.nist.gov/}
+}
+
+@article{hehre1972self,
+  title={Self—consistent molecular orbital methods. XII. Further extensions of Gaussian—type basis sets for use in molecular orbital studies of organic molecules},
+  author={Hehre, Warren J and Ditchfield, Robert and Pople, John A},
+  journal=JCP,
+  volume={56},
+  number={5},
+  pages={2257--2261},
+  year={1972},
+  publisher={American Institute of Physics},
+  url={https://aip.scitation.org/doi/10.1063/1.1677527}
+}
+
+@article{dunning1989gaussian,
+  title={Gaussian basis sets for use in correlated molecular calculations. I. The atoms boron through neon and hydrogen},
+  author={Dunning Jr, Thom H},
+  journal=JCP,
+  volume={90},
+  number={2},
+  pages={1007--1023},
+  year={1989},
+  publisher={American Institute of Physics},
+  url={https://aip.scitation.org/doi/10.1063/1.456153}
+}
+
+@article{helgaker1997basis,
+  title={Basis-set convergence of correlated calculations on water},
+  author={Helgaker, Trygve and Klopper, Wim and Koch, Henrik and Noga, Jozef},
+  journal=JCP,
+  volume={106},
+  number={23},
+  pages={9639--9646},
+  year={1997},
+  publisher={American Institute of Physics},
+  url={https://aip.scitation.org/doi/10.1063/1.473863}
+}
+
+@article{feller1992application,
+  title={Application of systematic sequences of wave functions to the water dimer},
+  author={Feller, David},
+  journal=JCP,
+  volume={96},
+  number={8},
+  pages={6104--6114},
+  year={1992},
+  publisher={American Institute of Physics},
+  url={https://aip.scitation.org/doi/10.1063/1.462652}
+}
+
+@article{barkoutsos2018quantum,
+ title     = {Quantum algorithms for electronic structure calculations: Particle-hole Hamiltonian and optimized wave-function expansions},
+ author    = {Barkoutsos, Panagiotis Kl. and Gonthier, Jerome F. and Sokolov, Igor and Moll, Nikolaj and Salis, Gian and Fuhrer, Andreas and Ganzhorn, Marc and Egger, Daniel J. and Troyer, Matthias and Mezzacapo, Antonio and Filipp, Stefan and Tavernelli, Ivano},
+ journal   = PRA,
+ volume    = {98},
+ issue     = {2},
+ pages     = {022322},
+ numpages  = {13},
+ year      = {2018},
+ month     = {Aug},
+ publisher = {American Physical Society},
+ doi       = {10.1103/PhysRevA.98.022322},
+ url       = {https://link.aps.org/doi/10.1103/PhysRevA.98.022322}
+}
+
+@article{aleksandrowicz2019qiskit,
+  title   = {Qiskit: An open-source framework for quantum computing},
+  author  = {Aleksandrowicz, Gadi and Alexander, Thomas and Barkoutsos, P and Bello, L and Ben-Haim, Y and Bucher, D and Cabrera-Hern{\'a}ndez, FJ and Carballo-Franquis, J and Chen, A and Chen, CF and others},
+  journal = {Zenodo},
+  url     = {https://zenodo.org/record/2562111#.XhA8qi2ZPyI},
+  volume  = {16},
+  pages   = {},
+  year    = {2019}
+}
+
+@article{bravyi2017tapering,
+ title   = {Tapering off qubits to simulate fermionic Hamiltonians},
+ author  = {Bravyi, Sergey and Gambetta, Jay M and Mezzacapo, Antonio and Temme, Kristan},
+ journal = {arXiv:1701.08213},
+ year    = {2017},
+ url     = {https://arxiv.org/abs/1701.08213}
+}
+
+@article{setia2019reducing,
+  title     = {Reducing qubit requirements for quantum simulations using molecular point group symmetries},
+  author    = {Setia, Kanav and Chen, Richard and Rice, Julia E and Mezzacapo, Antonio and Pistoia, Marco and Whitfield, James D},
+  journal   = JCTC,
+  volume    = {16},
+  number    = {10},
+  pages     = {6091--6097},
+  year      = {2020},
+  publisher = {ACS Publications},
+  url       = {https://pubs.acs.org/doi/10.1021/acs.jctc.0c00113}
+}
+
+
+@article{sun2018pyscf,
+  title={{P}y{SCF}: the Python-based simulations of chemistry framework},
+  author={Sun, Qiming and Berkelbach, Timothy C and Blunt, Nick S and Booth, George H and Guo, Sheng and Li, Zhendong and Liu, Junzi and McClain, James D and Sayfutyarova, Elvira R and Sharma, Sandeep and others},
+  journal=WIRES,
+  volume={8},
+  number={1},
+  pages={e1340},
+  year={2018},
+  publisher={Wiley Online Library},
+  url={https://onlinelibrary.wiley.com/doi/abs/10.1002/wcms.1340}
+}
+@article{sun2020recent,
+author = {Sun, Qiming and others},
+title = {Recent developments in the PySCF program package},
+journal = JCP,
+volume = {153},
+number = {2},
+pages = {024109},
+year = {2020},
+doi = {10.1063/5.0006074},
+URL = {https://doi.org/10.1063/5.0006074},
+}
+
+@article{zhu1997algorithm,
+ author    = {Zhu, Ciyou and Byrd, Richard H. and Lu, Peihuang and Nocedal, Jorge}, 
+ title     = {Algorithm 778: {L-BFGS-B}: {F}ortran Subroutines for Large-Scale Bound-Constrained Optimization},
+ year      = {1997},
+ issue_date = {December 1997},
+ publisher = {Association for Computing Machinery},
+ address   = {New York, NY, USA},
+ volume    = {23},
+ number    = {4},
+ issn      = {0098-3500},
+ url       = {https://doi.org/10.1145/279232.279236},
+ doi       = {10.1145/279232.279236},
+ journal   = {ACM Trans. Math. Softw.},
+ month     = dec,
+ pages     = {550–560},
+ numpages = {11},
+ keywords  = {limited-memory method, large-scale optimization, variable metric method, nonlinear optimization}
+}
+
+@article{morales2011remark,
+ title   = {Remark on" algorithm 778: {L-BFGS-B}: {F}ortran subroutines for large-scale bound constrained optimization".},
+ author  = {Morales, Jos{\'e} Luis and Nocedal, Jorge},
+ journal = {ACM Trans. Math. Softw.},
+ volume  = {38},
+ number  = {1},
+ pages   = {7--1},
+ year    = {2011},
+ url     = {https://doi.org/10.1145/2049662.2049669}
+}
+
+
