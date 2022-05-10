@@ -108,7 +108,7 @@ for i,depth in enumerate(depth_list):
 
 # -----------------------------------------------------------------------------------------------------------
 
-depth_list = [1,2,3,4]
+depth_list = [1,2,3,4,5,6]
 ndist,ndepth = len(dist_list),len(depth_list)
 
 data = np.zeros((ndist,ndepth,4,2))
