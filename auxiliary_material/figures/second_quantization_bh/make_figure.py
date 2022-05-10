@@ -25,8 +25,7 @@ def fill_panel(pan,xlabel,xlim,xticks,xticklabels,ylabel,ylim,yticks,yticklabels
     pan.tick_params(direction='in',which='both')
 
 def custom_plot(ax,style,d,x,y):
-    ax.plot(x,y,color=style[str(d)]['color'],ls=style[str(d)]['s'],marker=style[str(d)]['marker'],label=style[str(d)]['label'],ms=1) #style[str(d)]['ms'])
-
+    ax.plot(x,y,color=style[str(d)]['color'],ls=style[str(d)]['s'],marker=style[str(d)]['marker'],label=style[str(d)]['label'],ms=style[str(d)]['ms'])
 c_list = {'purple'       : '#B284BE',
           'jacaranda'    : '#888FC7',
           'light_yellow' : '#EEEA62',
@@ -47,16 +46,16 @@ c_list = {'purple'       : '#B284BE',
           'palatinate'   : '#72246C',
           'black'        : 'black'}
 
-style = {'scf':{'color':c_list['light-gray'],  's':':', 'w':2,'marker':'o','ms':3,'label':'SCF'},
-         '1'  :{'color':c_list['red'],         's':'-', 'w':2,'marker':'+','ms':5,'label':r'$n_r=1$'},
-         '2'  :{'color':c_list['cobalt'],      's':'--','w':2,'marker':'x','ms':7,'label':r'$n_r=2$'},
-         '3'  :{'color':c_list['orange'],      's':'-', 'w':2,'marker':'+','ms':5,'label':r'$n_r=3$'},
-         '4'  :{'color':c_list['mid_green'],   's':'--','w':2,'marker':'x','ms':7,'label':r'$n_r=4$'},
-         '5'  :{'color':c_list['earwax'],      's':'-', 'w':2,'marker':'+','ms':5,'label':r'$n_r=5$'},
-         '6'  :{'color':c_list['yellow_green'],'s':'--','w':2,'marker':'x','ms':7,'label':r'$n_r=6$'},
-         '7'  :{'color':c_list['gold'],        's':'-', 'w':2,'marker':'+','ms':5,'label':r'$n_r=7$'},
-         '8'  :{'color':c_list['jacaranda'],   's':'--','w':2,'marker':'x','ms':7,'label':r'$n_r=8$'},
-         'fci':{'color':c_list['black'],       's':'-.','w':2,'marker':'o','ms':1,'label':'FCI'}}
+style = {'scf':{'color':c_list['light-gray'],  's':':', 'w':2,'marker':'o','ms':2,'label':'SCF'},
+         '1'  :{'color':c_list['red'],         's':'-', 'w':2,'marker':'+','ms':4,'label':r'$n_r=1$'},
+         '2'  :{'color':c_list['cobalt'],      's':'--','w':2,'marker':'x','ms':3,'label':r'$n_r=2$'},
+         '3'  :{'color':c_list['orange'],      's':'-', 'w':2,'marker':'+','ms':4,'label':r'$n_r=3$'},
+         '4'  :{'color':c_list['mid_green'],   's':'--','w':2,'marker':'x','ms':3,'label':r'$n_r=4$'},
+         '5'  :{'color':c_list['earwax'],      's':'-', 'w':2,'marker':'+','ms':4,'label':r'$n_r=5$'},
+         '6'  :{'color':c_list['yellow_green'],'s':'--','w':2,'marker':'x','ms':3,'label':r'$n_r=6$'},
+         '7'  :{'color':c_list['gold'],        's':'-', 'w':2,'marker':'+','ms':4,'label':r'$n_r=7$'},
+         '8'  :{'color':c_list['jacaranda'],   's':'--','w':2,'marker':'x','ms':3,'label':r'$n_r=8$'},
+         'fci':{'color':c_list['black'],       's':'-.','w':2,'marker':'o','ms':0,'label':'FCI'}}
 
 # -----------------------------------------------------------------------------------------------------------
 
