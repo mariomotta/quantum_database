@@ -61,7 +61,7 @@ We will use a variety of indicators of algorithmic cost, related to the optimiza
 and to the quantum circuits leading to the calculation of energies and properties (number of qubits, gates and measurements, circuit depth).
 
 As illustrative applications, we employ the database presented here to test a new variational Ansatz termed {\em{cascade}} against existing methods,
-to compare open- and closed-shell implementations of the unitary coupled-cluster with singles and doubles, 
+to compare open- and closed-shell implementations of the unitary coupled-cluster with singles and doubles \cite{scuseria1987closed,szalay1997spin}, 
 and to compare two different strategies to encode fermionic degrees of freedom to qubits.
 
 The remainder of this work is organized as follows: 
@@ -342,8 +342,9 @@ and the energy and occupation numbers of the core 1s orbital are omitted.}
 
 \begin{figure}[t!]
 \includegraphics[width=0.4\textwidth]{../figures/first_quantization_pad_pav/first_quantization_pad_pav.eps}
-\caption{Total energy, deviation between computed and exact energy, and squared norm of the "unphysical" component (top to bottom) for the BeH$_2$ molecule
-at STO-6G level using the cascade ansatz and the first-quantization padding scheme with projection after variation.}
+\caption{Total energy, deviation between computed and exact energy, and squared-norm of the unphysical component of the wavefunction
+(top to bottom) for the BeH$_2$ molecule at STO-6G level, 
+using a first-quantization encoding with padding and a cascade Ansatz optimized with the projection-after-variation scheme.}
 \label{figure:pad_pav}
 \end{figure} 
 

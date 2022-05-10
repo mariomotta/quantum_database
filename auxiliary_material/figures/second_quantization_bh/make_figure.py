@@ -2,7 +2,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import os
 from matplotlib import rc
-rc('font',**{'family':'serif','serif':['cmu serif'],'size':9})
+
+rc('font',**{'family':'serif','serif':['cmu serif'],'size':12})
 rc('text', usetex=True)
 
 def read_data(fname):
@@ -42,7 +43,7 @@ c_list = {'purple'       : '#B284BE',
           'dark_green'   : '#1E5631',
           'orange'       : '#FF8856',
           'red'          : '#DC343B',
-          'light-gray'   : '#C0C0C0',
+          'light-gray'   : '#adadad',
           'palatinate'   : '#72246C',
           'black'        : 'black'}
 
@@ -159,36 +160,37 @@ for c in [0,1,2,3]:
     if(c>0): lab = ['']*5
     else:    lab = ['0.00','0.02','0.04','0.06','0.08']
     if(c>0): yl = ''
-    else:    yl = r'$E-E_{FCI}$ [$\mathrm{E_h}$]'
+    else:    yl = r'$E$-$E_{\mathrm{FCI}}$ [$\mathrm{E_h}$]'
     fill_panel(ax[1,c],'',[0.5,5.5],[0.5,1.5,2.5,3.5,4.5,5.5],['','','','','',''],yl,[0,0.08],[0,0.02,0.04,0.06,0.08],lab)
     # ---------------- 
     if(c>0): lab = ['']*5
     else:    lab = ['-0.002','-0.001','0.000','0.001','0.002']
     if(c>0): yl = ''
-    else:    yl = r'$N-N_{FCI}$'
+    else:    yl = r'$N$-$N_{\mathrm{FCI}}$'
     fill_panel(ax[2,c],'',[0.5,5.5],[0.5,1.5,2.5,3.5,4.5,5.5],['','','','','',''],yl,[-0.002,0.002],[-0.002,-0.001,0,0.001,0.002],lab)
     # ---------------- 
     if(c>0): lab = ['']*5
     else:    lab = ['0.00','0.50','1.00','1.50','2.00']
     if(c>0): yl = ''
-    else:    yl = r'$S^2-S^2_{FCI}$ [$\mathrm{E_h}$]'
+    else:    yl = r'$S^2$-$S^2_{\mathrm{FCI}}$'
     fill_panel(ax[3,c],'',[0.5,5.5],[0.5,1.5,2.5,3.5,4.5,5.5],['','','','','',''],yl,[0,2],[0,0.5,1.0,1.5,2.0],lab)
     # ---------------- 
     if(c>0): lab = ['']*5
     else:    lab = ['-0.002','-0.001','0.000','0.001','0.002']
     if(c>0): yl = ''
-    else:    yl = r'$S_z-S_{z,FCI}$'
-    fill_panel(ax[4,c],r'$R$ $[\AA]$',[0.5,5.5],[0.5,1.5,2.5,3.5,4.5,5.5],['0.5','1.5','2.5','3.5','4.5','5.5'],yl,[-0.002,0.002],[-0.002,-0.001,0,0.001,0.002],lab)
+    else:    yl = r'$S_z$-$S_{z,\mathrm{FCI}}$'
+    fill_panel(ax[4,c],r'$R$ $[\mathrm{\AA}]$',[0.5,5.5],[0.5,1.5,2.5,3.5,4.5,5.5],
+               ['0.5','1.5','2.5','3.5','4.5','5.5'],yl,[-0.002,0.002],[-0.002,-0.001,0,0.001,0.002],lab)
     # ---------------- 
-    ax[0,0].text(0.5,0.85,'$R_y$ linear',horizontalalignment='center',verticalalignment='center',transform=ax[0,0].transAxes)
-    ax[0,1].text(0.5,0.85,  '$R_y$ full',horizontalalignment='center',verticalalignment='center',transform=ax[0,1].transAxes)
-    ax[0,2].text(0.5,0.85,     'cascade',horizontalalignment='center',verticalalignment='center',transform=ax[0,2].transAxes)
-    ax[0,3].text(0.5,0.85,     'q-UCCSD',horizontalalignment='center',verticalalignment='center',transform=ax[0,3].transAxes)
+    ax[0,0].text(0.75,0.75,'$R_y$ linear',horizontalalignment='center',verticalalignment='center',transform=ax[0,0].transAxes)
+    ax[0,1].text(0.75,0.75,  '$R_y$ full',horizontalalignment='center',verticalalignment='center',transform=ax[0,1].transAxes)
+    ax[0,2].text(0.75,0.75,     'cascade',horizontalalignment='center',verticalalignment='center',transform=ax[0,2].transAxes)
+    ax[0,3].text(0.75,0.75,     'q-UCCSD',horizontalalignment='center',verticalalignment='center',transform=ax[0,3].transAxes)
 
 h,l = ax[0,0].get_legend_handles_labels()
-x0L,y0L,dxL,dyL = 0.0,1.05,4*L,0.5
+x0L,y0L,dxL,dyL = -0.02,1.05,4*L,0.5
 ax[0,0].legend(h,l,fancybox=True,shadow=True,ncol=10,loc=3,
-               bbox_to_anchor=(x0L,y0L,dxL,dyL),handlelength=1.5,handletextpad=1.1,columnspacing=1.3)
+               bbox_to_anchor=(x0L,y0L,dxL,dyL),handlelength=1.4,handletextpad=0.5,columnspacing=0.5)
 
 fname = 'second_quantization_bh.eps'
 fig.savefig(fname,format='eps')
