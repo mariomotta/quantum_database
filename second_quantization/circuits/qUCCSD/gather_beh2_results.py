@@ -23,11 +23,18 @@ from utils         import *
 from CustomVarForm import *
 
 def print_circuit(fname,circuit):
+    def to_str(x):
+        if(type(x)==np.float or type(x)==np.float64):
+           return str(x)
+        elif(type(x)==np.int):
+           return str(float(x))
+        else:
+           return str(x._symbol_expr)
     outf = open(fname,'w')
     for gate in circuit:
         gate_name = gate[0].name
         qubits = [q.index for q in gate[1]]
-        outf.write(str(gate_name)+' | '+' '.join([str(x) for x in qubits])+' | '+' '.join([str(x._symbol_expr) for x in gate[0].params])+'\n')
+        outf.write(str(gate_name)+' | '+' '.join([str(x) for x in qubits])+' | '+' '.join([to_str(x) for x in gate[0].params])+'\n')
     outf.close()
 
 def print_results(fname,res_vqe,res_ee,dN=0):
@@ -77,10 +84,7 @@ for depth in [1,2]:
                          initial_state=init_state,qubit_mapping=core._qubit_mapping,two_qubit_reduction=core._two_qubit_reduction,num_time_slices=2,z2_symmetries=z2syms)
        p0 = np.loadtxt('/Users/mario/Documents/GitHub/QITE/qite_es/scf_calculations/qUCCSD/beh2_reps2/R_%s/output_parameters.txt' % str(dist))
 
-    #var_form  = UCCSD(num_orbitals=core._molecule_info['num_orbitals'],num_particles=core._molecule_info['num_particles'],active_occupied=None,active_unoccupied=None,
-    #                  initial_state=init_state,qubit_mapping=core._qubit_mapping,two_qubit_reduction=core._two_qubit_reduction,num_time_slices=1,z2_symmetries=z2syms)
     optimizer = COBYLA(maxiter=0)
-    #p0 = np.loadtxt('/Users/mario/Documents/GitHub/QITE/qite_es/scf_calculations/qUCCSD/beh2/R_%s/output_parameters.txt' % str(dist))
     algo      = VQE(H_op,var_form,optimizer,aux_operators=A_op,include_custom=True,initial_point=p0)
    
     backend          = Aer.get_backend('statevector_simulator')
@@ -93,6 +97,6 @@ for depth in [1,2]:
     res_vqe,res_ee = get_results(H_op,A_op,molecule,core,algo_result,outfile)
     print_results('unrestricted/singles_doubles/trotter/beh2_reps_%d_%s_results.txt' % (depth,str(dist)),res_vqe,res_ee,dN=2)
 
-    circuit = algo.get_optimal_circuit()
+    circuit = algo.get_optimal_circuit().decompose()
     print_circuit('unrestricted/singles_doubles/trotter/beh2_reps_%d_%s_circuit.txt' % (depth,str(dist)),circuit)
     

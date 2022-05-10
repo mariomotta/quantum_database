@@ -172,20 +172,20 @@ for c in [0,1,2,3]:
     if(c>0): lab = ['']*5
     else:    lab = ['0.00','0.50','1.00','1.50','2.00']
     if(c>0): yl = ''
-    else:    yl = r'$S^2$-$S^2_{\mathrm{FCI}}$'
+    else:    yl = r'$S^2$-$S^2_{\mathrm{FCI}}$ $[\hbar]$'
     fill_panel(ax[3,c],'',[0.5,5.5],[0.5,1.5,2.5,3.5,4.5,5.5],['','','','','',''],yl,[0,2],[0,0.5,1.0,1.5,2.0],lab)
     # ---------------- 
     if(c>0): lab = ['']*5
     else:    lab = ['-0.002','-0.001','0.000','0.001','0.002']
     if(c>0): yl = ''
-    else:    yl = r'$S_z$-$S_{z,\mathrm{FCI}}$'
+    else:    yl = r'$S_z$-$S_{z,\mathrm{FCI}}$ $[\hbar]$'
     fill_panel(ax[4,c],r'$R$ $[\mathrm{\AA}]$',[0.5,5.5],[0.5,1.5,2.5,3.5,4.5,5.5],
                ['0.5','1.5','2.5','3.5','4.5','5.5'],yl,[-0.002,0.002],[-0.002,-0.001,0,0.001,0.002],lab)
     # ---------------- 
-    ax[0,0].text(0.75,0.75,'$R_y$ linear',horizontalalignment='center',verticalalignment='center',transform=ax[0,0].transAxes)
-    ax[0,1].text(0.75,0.75,  '$R_y$ full',horizontalalignment='center',verticalalignment='center',transform=ax[0,1].transAxes)
-    ax[0,2].text(0.75,0.75,     'cascade',horizontalalignment='center',verticalalignment='center',transform=ax[0,2].transAxes)
-    ax[0,3].text(0.75,0.75,     'q-UCCSD',horizontalalignment='center',verticalalignment='center',transform=ax[0,3].transAxes)
+    ax[0,0].text(0.75,0.75,'$R_y$ linear',horizontalalignment='center',verticalalignment='center',transform=ax[0,0].transAxes,fontsize=14)
+    ax[0,1].text(0.75,0.75,  '$R_y$ full',horizontalalignment='center',verticalalignment='center',transform=ax[0,1].transAxes,fontsize=14)
+    ax[0,2].text(0.75,0.75,     'cascade',horizontalalignment='center',verticalalignment='center',transform=ax[0,2].transAxes,fontsize=14)
+    ax[0,3].text(0.75,0.75,     'q-UCCSD',horizontalalignment='center',verticalalignment='center',transform=ax[0,3].transAxes,fontsize=14)
 
 h,l = ax[0,0].get_legend_handles_labels()
 x0L,y0L,dxL,dyL = -0.02,1.05,4*L,0.5

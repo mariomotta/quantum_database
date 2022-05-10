@@ -23,11 +23,18 @@ from utils         import *
 from CustomVarForm import *
 
 def print_circuit(fname,circuit):
+    def to_str(x):
+        if(type(x)==np.float or type(x)==np.float64):
+           return str(x)
+        elif(type(x)==np.int):
+           return str(float(x))
+        else:
+           return str(x._symbol_expr)
     outf = open(fname,'w')
     for gate in circuit:
         gate_name = gate[0].name
         qubits = [q.index for q in gate[1]]
-        outf.write(str(gate_name)+' | '+' '.join([str(x) for x in qubits])+' | '+' '.join([str(x._symbol_expr) for x in gate[0].params])+'\n')
+        outf.write(str(gate_name)+' | '+' '.join([str(x) for x in qubits])+' | '+' '.join([to_str(x) for x in gate[0].params])+'\n')
     outf.close()
 
 def print_results(fname,res_vqe,res_ee,dN=0):
@@ -94,6 +101,6 @@ for depth in [1,2]:
     res_vqe,res_ee = get_results(H_op,A_op,molecule,core,algo_result,outfile)
     print_results('unrestricted/singles_doubles/trotter/h2o_reps_%d_%s_results.txt' % (depth,str(dist)),res_vqe,res_ee,dN=4)
 
-    circuit = algo.get_optimal_circuit()
+    circuit = algo.get_optimal_circuit().decompose()
     print_circuit('unrestricted/singles_doubles/trotter/h2o_reps_%d_%s_circuit.txt' % (depth,str(dist)),circuit)
     

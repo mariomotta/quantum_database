@@ -14,11 +14,18 @@ set_qiskit_chemistry_logging(logging.INFO)
 set_qiskit_aqua_logging(logging.INFO)
 
 def print_circuit(fname,circuit):
+    def to_str(x):
+        if(type(x)==np.float or type(x)==np.float64):
+           return str(x)
+        elif(type(x)==np.int):
+           return str(float(x))
+        else:
+           return str(x._symbol_expr)
     outf = open(fname,'w')
     for gate in circuit:
         gate_name = gate[0].name
         qubits = [q.index for q in gate[1]]
-        outf.write(str(gate_name)+' | '+' '.join([str(x) for x in qubits])+' | '+' '.join([str(x._symbol_expr) for x in gate[0].params])+'\n')
+        outf.write(str(gate_name)+' | '+' '.join([str(x) for x in qubits])+' | '+' '.join([to_str(x) for x in gate[0].params])+'\n')
     outf.close()
 
 def print_results(fname,res_vqe,res_ee,dN=0):
@@ -79,9 +86,9 @@ rev = ('singles_doubles'=='doubles_singles')
 var_form  = UCCSD(num_orbitals=core._molecule_info['num_orbitals'],num_particles=core._molecule_info['num_particles'],
                   active_occupied=None,active_unoccupied=None,initial_state=init_state,qubit_mapping=core._qubit_mapping,
                   two_qubit_reduction=core._two_qubit_reduction,num_time_slices=1,z2_symmetries=z2syms,
-                  reverse_excitations=rev,expansion_mode='suzuki',reps=1)
+                  reverse_excitations=rev,expansion_mode='suzuki',reps=2)
 optimizer = COBYLA(maxiter=0)
-depth = 1
+depth = 2
 if(depth==1): p0 = np.loadtxt('/Users/mario/Documents/GitHub/QITE/qite_es/scf_calculations/qUCCSD/quccsd_flavors_h2o/unrestricted/suzuki/ds_%s/R_%s/output_parameters.txt' % (str(rev),str(dist)))
 else:         p0 = np.loadtxt('/Users/mario/Documents/GitHub/QITE/qite_es/scf_calculations/qUCCSD/quccsd_flavors_h2o_reps_2/unrestricted/suzuki/ds_%s/R_%s/output_parameters.txt' % (str(rev),str(dist)))
 algo      = VQE(H_op,var_form,optimizer,aux_operators=A_op,include_custom=True,initial_point=p0)
@@ -107,7 +114,7 @@ for Ei,Oi in zip(var_form.excitations,var_form._hopping_ops):
 
 p1 = algo._ret['opt_params']
 res_vqe,res_ee = get_results(H_op,A_op,molecule,core,algo_result,outfile)
-depth = 1
+depth = 2
 print_results('unrestricted/singles_doubles/suzuki/h2o_reps_%d_%s_results.txt' % (depth,str(dist)),res_vqe,res_ee,dN=4)
-circuit = algo.get_optimal_circuit()
+circuit = algo.get_optimal_circuit().decompose()
 print_circuit('unrestricted/singles_doubles/suzuki/h2o_reps_%d_%s_circuit.txt' % (depth,str(dist)),circuit)
