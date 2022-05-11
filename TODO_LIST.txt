@@ -1,0 +1,14 @@
+1. add first quantization data XXXXXXXXXX/VAP_ry/PAD_cascade
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+4. make figures format uniform (colors, markers, fonts)
+5. quality check
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+7. finish writing
+8. remove useless scripts
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+attenzione: tutte le simulazioni in 2nd quantization hanno richiesto l'environment..............qiskit2021
+quelle in prima quantizzazione pad_vap hanno richiesto l'environment............................caltech_entanglement
+quelle in prima quantizzazione pad_pav hanno richiesto l'environment............................qiskit2021
+

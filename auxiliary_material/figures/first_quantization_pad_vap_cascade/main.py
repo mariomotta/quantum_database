@@ -4,12 +4,12 @@ import matplotlib.pyplot as plt
 import itertools
 
 from matplotlib import rc
-rc('font',**{'family':'serif','serif':['cmu serif'],'size':13})
+rc('font',**{'family':'serif','serif':['cmu serif'],'size':12})
 rc('text', usetex=True)
 
-L        = 4.5
+L        = 3.2
 fig,ax   = plt.subplots(3,4,figsize=(4*L,0.5*3*L))
-fig.subplots_adjust(hspace=0.0,wspace=0.3)
+fig.subplots_adjust(hspace=0.0,wspace=0.4)
 
 c_list = {'yellow'      : '#DAA520',
           'orange'      : '#FF8856',
@@ -21,11 +21,11 @@ c_list = {'yellow'      : '#DAA520',
           'light-green' : '#B9D146',
           'dark-green'  : '#32826E'}
 
-style = {'1'  :{'color':c_list['red'],        's':'-', 'w':2,'marker':'o','ms':16,'label':r'$d=1$'},
-         '2'  :{'color':c_list['blue'],       's':'--','w':2,'marker':'P','ms':16,'label':r'$d=2$'},
-         '3'  :{'color':c_list['cyan'],       's':'--','w':2,'marker':'+','ms':16,'label':r'$d=3$'},
-         '4'  :{'color':c_list['light-green'],'s':'-', 'w':2,'marker':'x','ms':13,'label':r'$d=4$'},
-         '5'  :{'color':c_list['dark-green'], 's':'--','w':2,'marker':'3','ms':13,'label':r'$d=5$'},
+style = {'1'  :{'color':c_list['red'],        's':'-', 'w':2,'marker':'o','ms':16,'label':r'$n_r=1$'},
+         '2'  :{'color':c_list['blue'],       's':'--','w':2,'marker':'P','ms':16,'label':r'$n_r=2$'},
+         '3'  :{'color':c_list['cyan'],       's':'--','w':2,'marker':'+','ms':16,'label':r'$n_r=3$'},
+         '4'  :{'color':c_list['light-green'],'s':'-', 'w':2,'marker':'x','ms':13,'label':r'$n_r=4$'},
+         '5'  :{'color':c_list['dark-green'], 's':'--','w':2,'marker':'3','ms':13,'label':r'$n_r=5$'},
          'fci':{'color':c_list['orange'],     's':'-', 'w':2,'marker':'*','ms':11,'label':r'FCI'},
          'x'  :{'color':c_list['purple'],     's':'-.','w':2,'marker':'^','ms':11,'label':'x'},
          'y'  :{'color':c_list['orange'],     's':'-.','w':2,'marker':'s','ms':16,'label':'y'},
@@ -58,7 +58,7 @@ for j,mol in enumerate(['bh','hf','beh2','h2o']):
 
     print(mol)
     data_mol = {'geometries':get_geometries(mol)}
-    data_mol['E_fci'] = np.loadtxt('../../../first_quantization/pad/operators/%s_info.txt'%mol)[:,4]
+    data_mol['E_fci'] = np.loadtxt('../../../first_quantization/pad/variation_after_projection/operators_cascade/%s_info.txt'%mol)[:,4]
     for depth in [3,4,5]:
         data_mol['E_cascade_%d'%depth] = np.zeros(len(data_mol['geometries']))
         data_mol['P_cascade_%d'%depth] = np.zeros(len(data_mol['geometries']))
@@ -83,41 +83,41 @@ for j,mol in enumerate(['bh','hf','beh2','h2o']):
 fill_panel(ax[0,0],'',[0.5,5.5],[0.5,1.5,2.5,3.5,4.5,5.5],['','','','','',''],
                    r'$E$ [$\mathrm{E_h}$]',[-25.05,-24.85],[-25.05,-25.00,-24.95,-24.90,-24.85],['-25.05','-25.00','-24.95','-24.90','-24.85'])
 fill_panel(ax[1,0],'',[0.5,5.5],[0.5,1.5,2.5,3.5,4.5,5.5],['','','','','',''],
-                   r'$E-E_{\mathrm{FCI}}$ [m$\mathrm{E_h}$]',[0.0000,0.0001],[0,2e-5,4e-5,6e-5,8e-5,1e-4],['0.00','0.02','0.04','0.06','0.08','0.10'])
+                   r'$E$-$E_{\mathrm{FCI}}$ [$m\mathrm{E_h}$]',[0.0000,0.0001],[0,2e-5,4e-5,6e-5,8e-5,1e-4],['0.00','0.02','0.04','0.06','0.08','0.10'])
 fill_panel(ax[2,0],r'$R$ [\AA]',[0.5,5.5],[0.5,1.5,2.5,3.5,4.5,5.5],[0.5,1.5,2.5,3.5,4.5,5.5],
-                   r'$P$',[0,1],[0.0,0.2,0.4,0.6,0.8,1.0],['0.0','0.2','0.4','0.6','0.8','1.0'])
-ax[0,0].text(0.9,0.9,'BH',horizontalalignment='center',verticalalignment='center',transform=ax[0,0].transAxes)
+                   r'$P$',[0,1],[0.0,0.2,0.4,0.6,0.8,1.0],['0.00','0.20','0.40','0.60','0.80','1.00'])
+ax[0,0].text(0.85,0.9,'BH',horizontalalignment='center',verticalalignment='center',transform=ax[0,0].transAxes)
 
 fill_panel(ax[0,1],'',[0.5,4.5],[0.5,1.5,2.5,3.5,4.5],['','','','',''],
                    r'$E$ [$\mathrm{E_h}$]',[-99.7,-98.5],[-99.7,-99.4,-99.1,-98.8,-98.5],['-99.70','-99.40','-99.10','-98.80','-98.50'])
 fill_panel(ax[1,1],'',[0.5,4.5],[0.5,1.5,2.5,3.5,4.5],['','','','',''],
-                   r'$E-E_{\mathrm{FCI}}$ [m$\mathrm{E_h}$]',[0.0000,0.0001],[0,2e-5,4e-5,6e-5,8e-5,1e-4],['0.00','0.02','0.04','0.06','0.08','0.10'])
+                   r'$E$-$E_{\mathrm{FCI}}$ [$m\mathrm{E_h}$]',[0.0000,0.0001],[0,2e-5,4e-5,6e-5,8e-5,1e-4],['0.00','0.02','0.04','0.06','0.08','0.10'])
 fill_panel(ax[2,1],r'$R$ [\AA]',[0.5,4.5],[0.5,1.5,2.5,3.5,4.5],[0.5,1.5,2.5,3.5,4.5],
-                   r'$P$',[0,1],[0,0.25,0.5,0.75,1],['0.00','0.25','0.50','0.75','1.00'])
-ax[0,1].text(0.9,0.9,'HF',horizontalalignment='center',verticalalignment='center',transform=ax[0,1].transAxes)
+                   r'$P$',[0,1],[0.0,0.2,0.4,0.6,0.8,1.0],['0.00','0.20','0.40','0.60','0.80','1.00'])
+ax[0,1].text(0.85,0.9,'HF',horizontalalignment='center',verticalalignment='center',transform=ax[0,1].transAxes)
 
 fill_panel(ax[0,2],'',[0.5,4.5],[0.5,1.5,2.5,3.5,4.5],['','','','',''],
                    r'$E$ [$\mathrm{E_h}$]',[-15.8,-15.0],[-15.8,-15.6,-15.4,-15.2,-15.0],['-15.80','-15.60','-15.40','-15.20','-15.00'])
 fill_panel(ax[1,2],'',[0.5,4.5],[0.5,1.5,2.5,3.5,4.5],['','','','',''],
-                   r'$E-E_{\mathrm{FCI}}$ [m$\mathrm{E_h}$]',[0.0000,0.0001],[0,2e-5,4e-5,6e-5,8e-5,1e-4],['0.00','0.02','0.04','0.06','0.08','0.10'])
+                   r'$E$-$E_{\mathrm{FCI}}$ [$m\mathrm{E_h}$]',[0.0000,0.0001],[0,2e-5,4e-5,6e-5,8e-5,1e-4],['0.00','0.02','0.04','0.06','0.08','0.10'])
 fill_panel(ax[2,2],r'$R$ [\AA]',[0.5,4.5],[0.5,1.5,2.5,3.5,4.5],[0.5,1.5,2.5,3.5,4.5],
-                   r'$P$',[0,1],[0.0,0.2,0.4,0.6,0.8,1.0],['0.0','0.2','0.4','0.6','0.8','1.0'])
-ax[0,2].text(0.9,0.9,'BeH$_2$',horizontalalignment='center',verticalalignment='center',transform=ax[0,2].transAxes)
+                   r'$P$',[0,1],[0.0,0.2,0.4,0.6,0.8,1.0],['0.00','0.20','0.40','0.60','0.80','1.00'])
+ax[0,2].text(0.85,0.9,'BeH$_2$',horizontalalignment='center',verticalalignment='center',transform=ax[0,2].transAxes)
 
 fill_panel(ax[0,3],'',[0.5,3.5],[0.5,1.5,2.5,3.5],['','','',''],
                    r'$E$ [$\mathrm{E_h}$]',[-75.75,-75.35],[-75.75,-75.65,-75.55,-75.45,-75.35],['-75.75','-75.65','-75.55','-75.45','-75.35'])
 fill_panel(ax[1,3],'',[0.5,3.5],[0.5,1.5,2.5,3.5],['','','',''],
-                   r'$E-E_{\mathrm{FCI}}$ [m$\mathrm{E_h}$]',[0.0000,0.0001],[0,2e-5,4e-5,6e-5,8e-5,1e-4],['0.00','0.02','0.04','0.06','0.08','0.10'])
+                   r'$E$-$E_{\mathrm{FCI}}$ [$m\mathrm{E_h}$]',[0.0000,0.0001],[0,2e-5,4e-5,6e-5,8e-5,1e-4],['0.00','0.02','0.04','0.06','0.08','0.10'])
 fill_panel(ax[2,3],r'$R$ [\AA]',[0.5,3.5],[0.5,1.5,2.5,3.5],[0.5,1.5,2.5,3.5],
-                   r'$P$',[0,1],[0.0,0.2,0.4,0.6,0.8,1.0],['0.0','0.2','0.4','0.6','0.8','1.0'])
-ax[0,3].text(0.9,0.9,'H$_2$O',horizontalalignment='center',verticalalignment='center',transform=ax[0,3].transAxes)
+                   r'$P$',[0,1],[0.0,0.2,0.4,0.6,0.8,1.0],['0.00','0.20','0.40','0.60','0.80','1.00'])
+ax[0,3].text(0.85,0.9,'H$_2$O',horizontalalignment='center',verticalalignment='center',transform=ax[0,3].transAxes)
 
 # --------------------------------------------------
 
-h,l = ax[0,0].get_legend_handles_labels()
+h,l = ax[1,0].get_legend_handles_labels()
 
-x0L,y0L,dxL,dyL = 0.6,0.05,0.3,0.5
-ax[0,0].legend(h,l,fancybox=True,shadow=True,ncol=1,loc=3,
+x0L,y0L,dxL,dyL = 0.30,0.15,0.3,0.5
+ax[1,0].legend(h,l,fancybox=True,shadow=True,ncol=1,loc=3,
                bbox_to_anchor=(x0L,y0L,dxL,dyL),handlelength=1.25,handletextpad=0.5,columnspacing=1.5)
 
 fname = 'first_quantization_pad_vap_cascade.eps'

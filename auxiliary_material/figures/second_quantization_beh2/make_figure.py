@@ -159,25 +159,25 @@ for c in [0,1,2,3]:
     if(c>0): lab = ['']*5
     else:    lab = ['0.00','0.05','0.10','0.15','0.20']
     if(c>0): yl = ''
-    else:    yl = r'$E$-$E_{FCI}$ [$\mathrm{E_h}$]'
+    else:    yl = r'$E$-$E_{\mathrm{FCI}}$ [$\mathrm{E_h}$]'
     fill_panel(ax[1,c],'',[0.5,4.5],[0.5,1.5,2.5,3.5,4.5],['','','','',''],yl,[0,0.2],[0.00,0.05,0.10,0.15,0.20],lab)
     # ---------------- 
     if(c>0): lab = ['']*5
     else:    lab = ['-0.02','-0.01','0.00','0.01','0.02']
     if(c>0): yl = ''
-    else:    yl = r'$N$-$N_{FCI}$'
+    else:    yl = r'$N$-$N_{\mathrm{FCI}}$'
     fill_panel(ax[2,c],'',[0.5,4.5],[0.5,1.5,2.5,3.5,4.5],['','','','',''],yl,[-0.02,0.02],[-0.02,-0.01,0,0.01,0.02],lab)
     # ---------------- 
     if(c>0): lab = ['']*5
     else:    lab = ['0.00','1.50','3.00','4.50','6.00']
     if(c>0): yl = ''
-    else:    yl = r'$S^2$-$S^2_{FCI}$ [$\hbar$]'
+    else:    yl = r'$S^2$-$S^2_{\mathrm{FCI}}$ [$\hbar$]'
     fill_panel(ax[3,c],'',[0.5,4.5],[0.5,1.5,2.5,3.5,4.5],['','','','',''],yl,[0,6],[0,1.5,3.0,4.5,6.0],lab)
     # ---------------- 
     if(c>0): lab = ['']*5
     else:    lab = ['-2.00','-1.00','0.00','1.00','2.00']
     if(c>0): yl = ''
-    else:    yl = r'$S_z$-$S_{z,FCI}$ [$\hbar$]'
+    else:    yl = r'$S_z$-$S_{z,\mathrm{FCI}}$ [$\hbar$]'
     fill_panel(ax[4,c],r'$R$ $[\mathrm{\AA}]$',[0.5,4.5],[0.5,1.5,2.5,3.5,4.5],['0.5','1.5','2.5','3.5','4.5'],yl,[-2,2],[-2,-1,0,1,2],lab)
     # ---------------- 
     ax[0,0].text(0.5,0.85,'$R_y$ linear',horizontalalignment='center',verticalalignment='center',transform=ax[0,0].transAxes,fontsize=14)

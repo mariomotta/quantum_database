@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import os
 from matplotlib import rc
-rc('font',**{'family':'serif','serif':['cmu serif'],'size':9})
+rc('font',**{'family':'serif','serif':['cmu serif'],'size':10})
 rc('text', usetex=True)
 
 def read_data(fname):
@@ -24,7 +24,10 @@ def fill_panel(pan,xlabel,xlim,xticks,xticklabels,ylabel,ylim,yticks,yticklabels
     pan.tick_params(direction='in',which='both')
 
 def custom_plot(ax,style,d,x,y):
-    ax.plot(x,y,color=style[str(d)]['color'],ls=style[str(d)]['s'],marker=style[str(d)]['marker'],label=style[str(d)]['label'],ms=1) #style[str(d)]['ms'])
+    mk = style[str(d)]['marker']
+    if(mk=='o' or mk=='s'): ax.plot(x,y,color=style[str(d)]['color'],ls=style[str(d)]['s'],marker=mk,label=style[str(d)]['label'],ms=style[str(d)]['ms'],mec='black',mew=0.5)
+    else:                   ax.plot(x,y,color=style[str(d)]['color'],ls=style[str(d)]['s'],marker=mk,label=style[str(d)]['label'],ms=style[str(d)]['ms'])
+
 
 c_list = {'purple'       : '#B284BE',
           'jacaranda'    : '#888FC7',
@@ -46,22 +49,21 @@ c_list = {'purple'       : '#B284BE',
           'palatinate'   : '#72246C',
           'black'        : 'black'}
 
-style = {'ry_linear':{'color':c_list['red'],      's':'--', 'w':2,'marker':'+','ms':5,'label':r'R$_y$, linear'},
-         'qUCCSD'   :{'color':c_list['cobalt'],   's':'-',  'w':2,'marker':'x','ms':7,'label':r'qUCCSD'       },
-         'ry_full'  :{'color':c_list['orange'],   's':'-.', 'w':2,'marker':'+','ms':5,'label':r'R$_y$, full'  },
-         'cascade'  :{'color':c_list['mid_green'],'s':'--', 'w':2,'marker':'x','ms':7,'label':r'cascade'      }}
+style = {'ry_linear':{'color':c_list['red'],      's':'--', 'w':2,'marker':'o','ms':4,'label':r'R$_y$, linear'},
+         'qUCCSD'   :{'color':c_list['cobalt'],   's':'-',  'w':2,'marker':'+','ms':4,'label':r'q-UCCSD'      },
+         'ry_full'  :{'color':c_list['orange'],   's':'-.', 'w':2,'marker':'s','ms':4,'label':r'R$_y$, full'  },
+         'cascade'  :{'color':c_list['mid_green'],'s':'--', 'w':2,'marker':'x','ms':4,'label':r'cascade'      }}
 
 # -----------------------------------------------------------------------------------------------------------
 
-L        = 3.5
+L        = 3.3
 fig,ax   = plt.subplots(2,2,figsize=(2*L,0.5*2*L))
 fig.subplots_adjust(hspace=0.0,wspace=0.0,left=0.1,bottom=0.15)
 
 scf_data = np.loadtxt('/Users/mario/Documents/GitHub/VATech/quantum_database/auxiliary_material/scf_fci/bh_scf_energy.txt')
-
 path = '/Users/mario/Documents/GitHub/VATech/quantum_database/second_quantization/circuits/hardware_efficient/'
 
-dist_list = [0.7,0.9,1.1,1.3,1.5,1.7,1.9,2.1,2.3,2.5,2.7,2.9,3.1,3.3,3.5,3.7,3.9,4.1,4.3,4.5,4.7,4.9,5.1,5.3]
+dist_list = [0.7,0.9,1.1,1.3,1.5,1.7,1.9,2.1,2.3,2.5,2.7,2.9,3.1,3.3,3.5,3.7,3.9,4.1,4.3,4.5]
 depth_list = [8]
 ndist,ndepth = len(dist_list),len(depth_list)
 
@@ -175,11 +177,10 @@ for i,depth in enumerate(depth_list):
 for i,depth in enumerate(depth_list):
     custom_plot(ax[0,1],style,'qUCCSD',dist_list,data[:,i,0,0]-data[:,i,0,1])     # --- dev from fci
 
-
 h,l = ax[0,0].get_legend_handles_labels()
-x0L,y0L,dxL,dyL = 0.0,1.05,4*L,0.5
-ax[0,0].legend(h,l,fancybox=True,shadow=True,ncol=10,loc=3,
-               bbox_to_anchor=(x0L,y0L,dxL,dyL),handlelength=1.5,handletextpad=1.1,columnspacing=1.3)
+x0L,y0L,dxL,dyL = 0.50,0.26,0.5,0.5
+ax[0,0].legend(h,l,fancybox=True,shadow=True,ncol=1,loc=3,
+               bbox_to_anchor=(x0L,y0L,dxL,dyL),handlelength=1.5,handletextpad=1.0,columnspacing=1.0,labelspacing=0.1)
 
 # ===============================================================
 
@@ -240,11 +241,6 @@ for i,depth in enumerate(depth_list):
 
 for i,depth in enumerate(depth_list):
     custom_plot(ax[1,0],style,'qUCCSD',dist_list,data[:,i,0,0]-data[:,i,0,1])     # --- dev from fci
-
-h,l = ax[0,0].get_legend_handles_labels()
-x0L,y0L,dxL,dyL = 0.0,1.05,4*L,0.5
-ax[0,0].legend(h,l,fancybox=True,shadow=True,ncol=10,loc=3,
-               bbox_to_anchor=(x0L,y0L,dxL,dyL),handlelength=1.5,handletextpad=1.1,columnspacing=1.3)
 
 # ===============================================================================
 
@@ -310,21 +306,21 @@ for r in [0,1]:
     for c in [0,1]:
         ax[r,c].axhline(0.0016,ls=':',c='black')
 
-yl = r'$E-E_{\mathrm{FCI}}$ [$m\mathrm{E_h}$]'
+yl = r'$E$-$E_{\mathrm{FCI}}$ [$m\mathrm{E_h}$]'
 la = [' 0.0','5.0','10.0','15.0']
-fill_panel( ax[0,0],            '',[0.5,4.5],[0.5,1.5,2.5,3.5,4.5],['','','','',''],               yl,[0,0.015],[0,0.005,0.01,0.015],la)
-fill_panel( ax[1,0],r'$R$ [$\AA$]',[0.5,4.5],[0.5,1.5,2.5,3.5,4.5],['0.5','1.5','2.5','3.5','4.5'],yl,[0,0.015],[0,0.005,0.01,0.015],la)
+fill_panel( ax[0,0],                     '',[0.5,4.5],[0.5,1.5,2.5,3.5,4.5],['','','','',''],               yl,[0,0.015],[0,0.005,0.01,0.015],la)
+fill_panel( ax[1,0],r'$R$ [$\mathrm{\AA}$]',[0.5,4.5],[0.5,1.5,2.5,3.5,4.5],['0.5','1.5','2.5','3.5','4.5'],yl,[0,0.015],[0,0.005,0.01,0.015],la)
 DUMMY1 = ax[0,1].twinx()
-fill_panel(  DUMMY1,r'$R$ [$\AA$]',[0.5,4.5],[0.5,1.5,2.5,3.5,4.5],['','','','',''],               yl,[0,0.015],[0,0.005,0.01,0.015],la)
-fill_panel( ax[0,1],            '',[0.5,4.5],[0.5,1.5,2.5,3.5,4.5],['','','','',''],               '',[0,0.015],[],[])
+fill_panel(  DUMMY1,r'$R$ [$\mathrm{\AA}$]',[0.5,4.5],[0.5,1.5,2.5,3.5,4.5],['','','','',''],               yl,[0,0.015],[0,0.005,0.01,0.015],la)
+fill_panel( ax[0,1],                     '',[0.5,4.5],[0.5,1.5,2.5,3.5,4.5],['','','','',''],               '',[0,0.015],[],[])
 DUMMY2 = ax[1,1].twinx()
-fill_panel(  DUMMY2,r'$R$ [$\AA$]',[0.5,4.5],[0.5,1.5,2.5,3.5,4.5],['0.5','1.5','2.5','3.5','4.5'],yl,[0,0.015],[0,0.005,0.01,0.015],la)
-fill_panel( ax[1,1],r'$R$ [$\AA$]',[0.5,4.5],[0.5,1.5,2.5,3.5,4.5],['0.5','1.5','2.5','3.5','4.5'],'',[0,0.015],[],[])
+fill_panel(  DUMMY2,r'$R$ [$\mathrm{\AA}$]',[0.5,4.5],[0.5,1.5,2.5,3.5,4.5],['0.5','1.5','2.5','3.5','4.5'],yl,[0,0.015],[0,0.005,0.01,0.015],la)
+fill_panel( ax[1,1],r'$R$ [$\mathrm{\AA}$]',[0.5,4.5],[0.5,1.5,2.5,3.5,4.5],['0.5','1.5','2.5','3.5','4.5'],'',[0,0.015],[],[])
 
-ax[0,0].text(0.5,0.8,     'BH',horizontalalignment='center',verticalalignment='center',transform=ax[0,0].transAxes)
-ax[0,1].text(0.5,0.8,'BeH$_2$',horizontalalignment='center',verticalalignment='center',transform=ax[0,1].transAxes)
-ax[1,0].text(0.5,0.8,     'HF',horizontalalignment='center',verticalalignment='center',transform=ax[1,0].transAxes)
-ax[1,1].text(0.5,0.8, 'H$_2$O',horizontalalignment='center',verticalalignment='center',transform=ax[1,1].transAxes)
+ax[0,0].text(0.15,0.85,     'BH',horizontalalignment='center',verticalalignment='center',transform=ax[0,0].transAxes)
+ax[0,1].text(0.15,0.85,'BeH$_2$',horizontalalignment='center',verticalalignment='center',transform=ax[0,1].transAxes)
+ax[1,0].text(0.15,0.85,     'HF',horizontalalignment='center',verticalalignment='center',transform=ax[1,0].transAxes)
+ax[1,1].text(0.15,0.85, 'H$_2$O',horizontalalignment='center',verticalalignment='center',transform=ax[1,1].transAxes)
 
 fname = 'second_quantization_comparison.eps'
 fig.savefig(fname,format='eps')
