@@ -34,7 +34,7 @@ from qiskit.aqua.algorithms                        import VQE
 from qiskit.aqua                                   import QuantumInstance,aqua_globals
 from qiskit.circuit.library                        import EfficientSU2
 
-dist_list = [1.7] #,0.9,1.1,1.3,1.5,1.7,1.9,2.1,2.3,2.5,2.7,2.9,3.1,3.3,3.5,3.7,3.9,4.1,4.3,4.5]
+dist_list = [0.7,0.9,1.1,1.3,1.5,1.7,1.9,2.1,2.3,2.5,2.7,2.9,3.1,3.3,3.5,3.7,3.9,4.1,4.3,4.5]
 depth_list = [3,4,5]
 
 for depth in depth_list:
