@@ -55,6 +55,8 @@ style = {'scf':{'color':c_list['light-gray'],  's':':', 'w':2,'marker':'o','ms':
          '6'  :{'color':c_list['yellow_green'],'s':'--','w':2,'marker':'x','ms':3,'label':r'$n_r=6$'},
          '7'  :{'color':c_list['gold'],        's':'-', 'w':2,'marker':'+','ms':4,'label':r'$n_r=7$'},
          '8'  :{'color':c_list['jacaranda'],   's':'--','w':2,'marker':'x','ms':3,'label':r'$n_r=8$'},
+         '9'  :{'color':c_list['brown'],       's':'-', 'w':2,'marker':'+','ms':4,'label':r'$n_r=9$'},
+         '10' :{'color':c_list['purple'],      's':'--','w':2,'marker':'x','ms':3,'label':r'$n_r=10$'},
          'fci':{'color':c_list['black'],       's':'-.','w':2,'marker':'o','ms':0,'label':'FCI'}}
 
 # -----------------------------------------------------------------------------------------------------------
@@ -68,7 +70,7 @@ scf_data = np.loadtxt('/Users/mario/Documents/GitHub/VATech/quantum_database/aux
 path = '/Users/mario/Documents/GitHub/VATech/quantum_database/second_quantization/circuits/hardware_efficient/'
 
 dist_list = [0.7,0.9,1.1,1.3,1.5,1.7,1.9,2.1,2.3,2.5,2.7,2.9,3.1,3.3,3.5,3.7,3.9,4.1,4.3,4.5]
-depth_list = [1,2,3,4,5,6,7,8]
+depth_list = [1,2,3,4,5,6,7,8,9,10]
 ndist,ndepth = len(dist_list),len(depth_list)
 
 data = np.zeros((ndist,ndepth,4,2))
@@ -82,13 +84,13 @@ for i,depth in enumerate(depth_list):
     custom_plot(ax[2,0],style,depth,dist_list,data[:,i,1,0]-data[:,i,1,1])     # --- n
     custom_plot(ax[3,0],style,depth,dist_list,data[:,i,2,0]-data[:,i,2,1])     # --- sz
     custom_plot(ax[4,0],style,depth,dist_list,data[:,i,3,0]-data[:,i,3,1])     # --- s2
-    if(depth==8): custom_plot(ax[0,0],style,'scf',scf_data[:,0],scf_data[:,1]) # --- scf
-    if(depth==8): custom_plot(ax[0,0],style,'fci',dist_list,data[:,i,0,1])     # --- fci
-    if(depth==8): custom_plot(ax[1,0],style,'scf',scf_data[:,0],scf_data[:,1]-data[:,i,0,1])
+    if(depth==10): custom_plot(ax[0,0],style,'scf',scf_data[:,0],scf_data[:,1]) # --- scf
+    if(depth==10): custom_plot(ax[0,0],style,'fci',dist_list,data[:,i,0,1])     # --- fci
+    if(depth==10): custom_plot(ax[1,0],style,'scf',scf_data[:,0],scf_data[:,1]-data[:,i,0,1])
 
 # -----------------------------------------------------------------------------------------------------------
 
-depth_list = [1,2,3,4]
+depth_list = [1,2,3,4,5,6,7,8,9,10]
 ndist,ndepth = len(dist_list),len(depth_list)
 
 data = np.zeros((ndist,ndepth,4,2))
@@ -102,9 +104,9 @@ for i,depth in enumerate(depth_list):
     custom_plot(ax[2,1],style,depth,dist_list,data[:,i,1,0]-data[:,i,1,1])     # --- n
     custom_plot(ax[3,1],style,depth,dist_list,data[:,i,2,0]-data[:,i,2,1])     # --- sz
     custom_plot(ax[4,1],style,depth,dist_list,data[:,i,3,0]-data[:,i,3,1])     # --- s2
-    if(depth==4): custom_plot(ax[0,1],style,'scf',scf_data[:,0],scf_data[:,1]) # --- scf
-    if(depth==4): custom_plot(ax[0,1],style,'fci',dist_list,data[:,i,0,1])     # --- fci
-    if(depth==4): custom_plot(ax[1,1],style,'scf',scf_data[:,0],scf_data[:,1]-data[:,i,0,1])
+    if(depth==10): custom_plot(ax[0,1],style,'scf',scf_data[:,0],scf_data[:,1]) # --- scf
+    if(depth==10): custom_plot(ax[0,1],style,'fci',dist_list,data[:,i,0,1])     # --- fci
+    if(depth==10): custom_plot(ax[1,1],style,'scf',scf_data[:,0],scf_data[:,1]-data[:,i,0,1])
 
 # -----------------------------------------------------------------------------------------------------------
 
@@ -122,9 +124,9 @@ for i,depth in enumerate(depth_list):
     custom_plot(ax[2,2],style,depth,dist_list,data[:,i,1,0]-data[:,i,1,1])     # --- n
     custom_plot(ax[3,2],style,depth,dist_list,data[:,i,2,0]-data[:,i,2,1])     # --- sz
     custom_plot(ax[4,2],style,depth,dist_list,data[:,i,3,0]-data[:,i,3,1])     # --- s2
-    if(depth==4): custom_plot(ax[0,2],style,'scf',scf_data[:,0],scf_data[:,1]) # --- scf
-    if(depth==4): custom_plot(ax[0,2],style,'fci',dist_list,data[:,i,0,1])     # --- fci
-    if(depth==4): custom_plot(ax[1,2],style,'scf',scf_data[:,0],scf_data[:,1]-data[:,i,0,1])
+    if(depth==6): custom_plot(ax[0,2],style,'scf',scf_data[:,0],scf_data[:,1]) # --- scf
+    if(depth==6): custom_plot(ax[0,2],style,'fci',dist_list,data[:,i,0,1])     # --- fci
+    if(depth==6): custom_plot(ax[1,2],style,'scf',scf_data[:,0],scf_data[:,1]-data[:,i,0,1])
 
 # -----------------------------------------------------------------------------------------------------------
 
@@ -145,9 +147,9 @@ for i,depth in enumerate(depth_list):
     custom_plot(ax[2,3],style,depth,dist_list,data[:,i,1,0]-data[:,i,1,1])     # --- n
     custom_plot(ax[3,3],style,depth,dist_list,data[:,i,2,0]-data[:,i,2,1])     # --- sz
     custom_plot(ax[4,3],style,depth,dist_list,data[:,i,3,0]-data[:,i,3,1])     # --- s2
-    if(depth==1): custom_plot(ax[0,3],style,'scf',scf_data[:,0],scf_data[:,1]) # --- scf
-    if(depth==1): custom_plot(ax[0,3],style,'fci',dist_list,data[:,i,0,1])     # --- fci
-    if(depth==1): custom_plot(ax[1,3],style,'scf',scf_data[:,0],scf_data[:,1]-data[:,i,0,1])
+    if(depth==2): custom_plot(ax[0,3],style,'scf',scf_data[:,0],scf_data[:,1]) # --- scf
+    if(depth==2): custom_plot(ax[0,3],style,'fci',dist_list,data[:,i,0,1])     # --- fci
+    if(depth==2): custom_plot(ax[1,3],style,'scf',scf_data[:,0],scf_data[:,1]-data[:,i,0,1])
 
 for c in [0,1,2,3]:
     if(c>0): lab = ['']*4
@@ -187,8 +189,8 @@ for c in [0,1,2,3]:
 
 h,l = ax[0,0].get_legend_handles_labels()
 x0L,y0L,dxL,dyL = -0.02,1.05,4*L,0.5
-ax[0,0].legend(h,l,fancybox=True,shadow=True,ncol=10,loc=3,
-               bbox_to_anchor=(x0L,y0L,dxL,dyL),handlelength=1.4,handletextpad=0.5,columnspacing=0.5)
+ax[0,0].legend(h,l,fancybox=True,shadow=True,ncol=6,loc=3,
+               bbox_to_anchor=(x0L,y0L,dxL,dyL),handlelength=2.0,handletextpad=1,columnspacing=2.91,labelspacing=0.25)
 
 fname = 'second_quantization_beh2.eps'
 fig.savefig(fname,format='eps')

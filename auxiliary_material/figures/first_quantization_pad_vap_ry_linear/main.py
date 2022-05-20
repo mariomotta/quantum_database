@@ -21,11 +21,9 @@ c_list = {'yellow'      : '#DAA520',
           'light-green' : '#B9D146',
           'dark-green'  : '#32826E'}
 
-style = {'1'  :{'color':c_list['red'],        's':'-', 'w':2,'marker':'o','ms':16,'label':r'$n_r=1$'},
-         '2'  :{'color':c_list['blue'],       's':'--','w':2,'marker':'P','ms':16,'label':r'$n_r=2$'},
-         '3'  :{'color':c_list['cyan'],       's':'--','w':2,'marker':'+','ms':16,'label':r'$n_r=3$'},
-         '4'  :{'color':c_list['light-green'],'s':'-', 'w':2,'marker':'x','ms':13,'label':r'$n_r=4$'},
-         '5'  :{'color':c_list['dark-green'], 's':'--','w':2,'marker':'3','ms':13,'label':r'$n_r=5$'},
+style = {'5'  :{'color':c_list['cyan'],       's':'--','w':2,'marker':'+','ms':16,'label':r'$n_r=5$'},
+         '6'  :{'color':c_list['light-green'],'s':'-', 'w':2,'marker':'x','ms':13,'label':r'$n_r=6$'},
+         '7'  :{'color':c_list['dark-green'], 's':'--','w':2,'marker':'3','ms':13,'label':r'$n_r=7$'},
          'fci':{'color':c_list['orange'],     's':'-', 'w':2,'marker':'*','ms':11,'label':r'FCI'},
          'x'  :{'color':c_list['purple'],     's':'-.','w':2,'marker':'^','ms':11,'label':'x'},
          'y'  :{'color':c_list['orange'],     's':'-.','w':2,'marker':'s','ms':16,'label':'y'},
@@ -56,17 +54,17 @@ def get_geometries(mol):
 
 for j,mol in enumerate(['bh','hf','beh2','h2o']):
 
-    print(mol)
+    d_list = [5,6,7]
+    if(mol=='beh2'): d_list = [5,6]
     data_mol = {'geometries':get_geometries(mol)}
     data_mol['E_fci'] = np.loadtxt('../../../first_quantization/pad/variation_after_projection/operators_ry/%s_info.txt'%mol)[:,4]
-    for depth in [3,4,5]:
+    for depth in d_list:
         data_mol['E_ry_linear_%d'%depth] = np.zeros(len(data_mol['geometries']))
         data_mol['P_ry_linear_%d'%depth] = np.zeros(len(data_mol['geometries']))
         for jj,R in enumerate(data_mol['geometries']):
             data_mol['E_ry_linear_%d'%depth][jj] = np.loadtxt('../../../first_quantization/pad/variation_after_projection/circuits/ry_linear_%d/%s_%s_results.txt'%(depth,mol,str(R)))[0,0]
             data_mol['P_ry_linear_%d'%depth][jj] = np.loadtxt('../../../first_quantization/pad/variation_after_projection/circuits/ry_linear_%d/%s_%s_results.txt'%(depth,mol,str(R)))[1,0]
 
-    d_list = [3,4,5]    
     for d in d_list:
         R = np.array(data_mol['geometries'])
         E = np.array(data_mol['E_ry_linear_%d'%d])
@@ -83,7 +81,7 @@ for j,mol in enumerate(['bh','hf','beh2','h2o']):
 fill_panel(ax[0,0],'',[0.5,5.5],[0.5,1.5,2.5,3.5,4.5,5.5],['','','','','',''],
                    r'$E$ [$\mathrm{E_h}$]',[-25.05,-24.85],[-25.05,-25.00,-24.95,-24.90,-24.85],['-25.05','-25.00','-24.95','-24.90','-24.85'])
 fill_panel(ax[1,0],'',[0.5,5.5],[0.5,1.5,2.5,3.5,4.5,5.5],['','','','','',''],
-                   r'$E$-$E_{\mathrm{FCI}}$ [$\mathrm{E_h}$]',[0.0000,0.06],[0,0.02,0.04,0.06],['0.00','0.02','0.04','0.06'])
+                   r'$E$-$E_{\mathrm{FCI}}$ [$m\mathrm{E_h}$]',[0.000,0.0025],[0,5e-4,1e-3,1.5e-3,2e-3,2.5e-3],['0.0','0.5','1.0','1.5','2.0','2.5'])
 fill_panel(ax[2,0],r'$R$ [\AA]',[0.5,5.5],[0.5,1.5,2.5,3.5,4.5,5.5],[0.5,1.5,2.5,3.5,4.5,5.5],
                    r'$P$',[0,1],[0.0,0.2,0.4,0.6,0.8,1.0],['0.00','0.20','0.40','0.60','0.80','1.00'])
 ax[0,0].text(0.85,0.9,'BH',horizontalalignment='center',verticalalignment='center',transform=ax[0,0].transAxes)
@@ -91,7 +89,7 @@ ax[0,0].text(0.85,0.9,'BH',horizontalalignment='center',verticalalignment='cente
 fill_panel(ax[0,1],'',[0.5,4.5],[0.5,1.5,2.5,3.5,4.5],['','','','',''],
                    r'$E$ [$\mathrm{E_h}$]',[-99.7,-98.5],[-99.7,-99.4,-99.1,-98.8,-98.5],['-99.70','-99.40','-99.10','-98.80','-98.50'])
 fill_panel(ax[1,1],'',[0.5,4.5],[0.5,1.5,2.5,3.5,4.5],['','','','',''],
-                   r'$E$-$E_{\mathrm{FCI}}$ [$\mathrm{E_h}$]',[0.0000,0.06],[0,0.02,0.04,0.06],['0.00','0.02','0.04','0.06'])
+                   r'$E$-$E_{\mathrm{FCI}}$ [$m\mathrm{E_h}$]',[0.000,0.0025],[0,5e-4,1e-3,1.5e-3,2e-3,2.5e-3],['0.0','0.5','1.0','1.5','2.0','2.5'])
 fill_panel(ax[2,1],r'$R$ [\AA]',[0.5,4.5],[0.5,1.5,2.5,3.5,4.5],[0.5,1.5,2.5,3.5,4.5],
                    r'$P$',[0,1],[0.0,0.2,0.4,0.6,0.8,1.0],['0.00','0.20','0.40','0.60','0.80','1.00'])
 ax[0,1].text(0.85,0.9,'HF',horizontalalignment='center',verticalalignment='center',transform=ax[0,1].transAxes)
@@ -99,7 +97,7 @@ ax[0,1].text(0.85,0.9,'HF',horizontalalignment='center',verticalalignment='cente
 fill_panel(ax[0,2],'',[0.5,4.5],[0.5,1.5,2.5,3.5,4.5],['','','','',''],
                    r'$E$ [$\mathrm{E_h}$]',[-15.8,-15.0],[-15.8,-15.6,-15.4,-15.2,-15.0],['-15.80','-15.60','-15.40','-15.20','-15.00'])
 fill_panel(ax[1,2],'',[0.5,4.5],[0.5,1.5,2.5,3.5,4.5],['','','','',''],
-                   r'$E$-$E_{\mathrm{FCI}}$ [$\mathrm{E_h}$]',[0.0000,0.06],[0,0.02,0.04,0.06],['0.00','0.02','0.04','0.06'])
+                   r'$E$-$E_{\mathrm{FCI}}$ [$m\mathrm{E_h}$]',[0.000,0.0025],[0,5e-4,1e-3,1.5e-3,2e-3,2.5e-3],['0.0','0.5','1.0','1.5','2.0','2.5'])
 fill_panel(ax[2,2],r'$R$ [\AA]',[0.5,4.5],[0.5,1.5,2.5,3.5,4.5],[0.5,1.5,2.5,3.5,4.5],
                    r'$P$',[0,1],[0.0,0.2,0.4,0.6,0.8,1.0],['0.00','0.20','0.40','0.60','0.80','1.00'])
 ax[0,2].text(0.85,0.9,'BeH$_2$',horizontalalignment='center',verticalalignment='center',transform=ax[0,2].transAxes)
@@ -107,7 +105,7 @@ ax[0,2].text(0.85,0.9,'BeH$_2$',horizontalalignment='center',verticalalignment='
 fill_panel(ax[0,3],'',[0.5,3.5],[0.5,1.5,2.5,3.5],['','','',''],
                    r'$E$ [$\mathrm{E_h}$]',[-75.75,-75.35],[-75.75,-75.65,-75.55,-75.45,-75.35],['-75.75','-75.65','-75.55','-75.45','-75.35'])
 fill_panel(ax[1,3],'',[0.5,3.5],[0.5,1.5,2.5,3.5],['','','',''],
-                   r'$E$-$E_{\mathrm{FCI}}$ [$\mathrm{E_h}$]',[0.0000,0.06],[0,0.02,0.04,0.06],['0.00','0.02','0.04','0.06'])
+                   r'$E$-$E_{\mathrm{FCI}}$ [$m\mathrm{E_h}$]',[0.000,0.0025],[0,5e-4,1e-3,1.5e-3,2e-3,2.5e-3],['0.0','0.5','1.0','1.5','2.0','2.5'])
 fill_panel(ax[2,3],r'$R$ [\AA]',[0.5,3.5],[0.5,1.5,2.5,3.5],[0.5,1.5,2.5,3.5],
                    r'$P$',[0,1],[0.0,0.2,0.4,0.6,0.8,1.0],['0.00','0.20','0.40','0.60','0.80','1.00'])
 ax[0,3].text(0.85,0.9,'H$_2$O',horizontalalignment='center',verticalalignment='center',transform=ax[0,3].transAxes)

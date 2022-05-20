@@ -43,7 +43,7 @@ def geometry(d):
     return "O 0.0000 0.0000 {0}; H 0.0000 {1} -{2}; H 0.0000 -{1} -{2}".format(z0*r,y0*r,z1*r)
 
 dist_list = [0.7,0.9,1.1,1.3,1.5,1.7,1.9,2.1,2.3,2.5,2.7,2.9,3.1,3.3]
-depth_list = [3,4,5]
+depth_list = [6,7] #[3,4,5]
 
 for depth in depth_list:
     for dist in dist_list:

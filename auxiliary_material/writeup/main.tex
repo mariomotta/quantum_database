@@ -1,4 +1,4 @@
-\documentclass[aps,pra,twocolumn]{revtex4-2}
+\documentclass[aps,pra,onecolumn]{revtex4-2}
 \usepackage{amsmath,amsfonts,amsthm,bbm}
 \usepackage[dvipsnames]{xcolor}
 \usepackage{graphicx}
@@ -12,6 +12,7 @@
 \newcommand{\dst}[1]{\hat{c}_{#1}^{\phantom{\dagger}}}
 \newcommand{\vett}[1]{{\bf{#1}}}
 \newcommand{\bgreek}[1]{{\boldsymbol{#1}}}
+\newcommand{\todo}[1]{{\bf{{\color{red}#1}}}}
 
 \begin{document}
 
@@ -250,7 +251,9 @@ and the number of variational parameters $n_{\bgreek{\theta}}$.
 \begin{figure*}[t!]
 \includegraphics[width=0.8\textwidth]{../figures/second_quantization_bh/second_quantization_bh.eps}
 \caption{Total energy, deviation between computed and exact total energy, electron number, total spin, and spin-$z$ (top to bottom) 
-using the R$_y$ (with linear and full connectivity), cascade, and q-UCCSD Ans\"{a}tze (left to right), for the BH molecule at STO-6G level.}
+using the R$_y$ (with linear and full connectivity), cascade, and q-UCCSD Ans\"{a}tze (left to right), for the BH molecule at STO-6G level.
+\todo{smooth out Ry full spin}
+}
 \label{figure:second_bh}
 \end{figure*}
 
@@ -264,7 +267,9 @@ using the R$_y$ (with linear and full connectivity), cascade, and q-UCCSD Ans\"{
 \begin{figure*}[t!]
 \includegraphics[width=0.8\textwidth]{../figures/second_quantization_beh2/second_quantization_beh2.eps}
 \caption{Total energy, deviation between computed and exact total energy, electron number, total spin, and spin-$z$ (top to bottom) 
-using the R$_y$ (with linear and full connectivity), cascade, and q-UCCSD Ans\"{a}tze (left to right), for the BeH$_2$ molecule at STO-6G level.}
+using the R$_y$ (with linear and full connectivity), cascade, and q-UCCSD Ans\"{a}tze (left to right), for the BeH$_2$ molecule at STO-6G level.
+\todo{smooth out Ry full spin and $n_r=9$ energy for Ry linear}
+}
 \label{figure:second_beh2}
 \end{figure*}
 
@@ -277,9 +282,11 @@ using the R$_y$ (with linear and full connectivity), cascade, and q-UCCSD Ans\"{
 
 \begin{figure*}[t!]
 \includegraphics[width=0.7\textwidth]{../figures/second_quantization_comparison/second_quantization_comparison.eps}
-\caption{Deviation between computed and exact total energy for the BH, HF, BeH$_2$ and H$_2$O molecules at STO-6G level (counterclockwise) 
-using the R$_y$ (with linear and full connectivity), cascade, and q-UCCSD Ans\"{a}tze (red circles, orange squares, green crosses, and blue markers)
-with the highest computed number of repetitions ($n_r=8,6,4,2$ respectively).}
+\caption{Deviation between computed and exact total energy for the BH, HF, BeH$_2$ and H$_2$O molecules at STO-6G level 
+(counterclockwise) using the R$_y$ (with linear and full connectivity), cascade, and q-UCCSD Ans\"{a}tze 
+(red circles, orange squares, green crosses, and blue markers) with the highest computed number of repetitions.
+\todo{look into BeH2 energies for Ry full}
+}
 \label{figure:second_h2o}
 \end{figure*} 
 
@@ -303,7 +310,9 @@ using a first-quantization encoding with padding and a cascade Ansatz optimized 
 \includegraphics[width=0.9\textwidth]{../figures/first_quantization_pad_vap_ry_linear/first_quantization_pad_vap_ry_linear.eps}
 \caption{Total energy, deviation between computed and exact energy, and squared-norm of the unphysical component of the wavefunction
 (top to bottom) for the BH, HF, BeH$_2$ and H$_2$O molecules at STO-6G level (left to right) 
-using a first-quantization encoding with padding and an R$_y$ Ansatz with linear connectivity optimized with the variation-after-projection scheme.}
+using a first-quantization encoding with padding and an R$_y$ Ansatz with linear connectivity optimized with the variation-after-projection scheme.
+\todo{BeH2 $n_r=7$ is incomplete, smooth out H2O with depth $n_r=5$ and BeH2 with depth $n_r=5,6$}
+}
 \label{figure:first_pad_vap_ry}
 \end{figure*} 
 

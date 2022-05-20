@@ -77,7 +77,7 @@ for i,depth in enumerate(depth_list):
 
 # -----------------------------------------------------------------------------------------------------------
 
-depth_list = [4]
+depth_list = [8]
 ndist,ndepth = len(dist_list),len(depth_list)
 
 data = np.zeros((ndist,ndepth,4,2))
@@ -124,7 +124,7 @@ scf_data = np.loadtxt('/Users/mario/Documents/GitHub/VATech/quantum_database/aux
 path = '/Users/mario/Documents/GitHub/VATech/quantum_database/second_quantization/circuits/hardware_efficient/'
 
 dist_list = [0.7,0.9,1.1,1.3,1.5,1.7,1.9,2.1,2.3,2.5,2.7,2.9,3.1,3.3,3.5,3.7,3.9,4.1,4.3,4.5]
-depth_list = [8]
+depth_list = [10]
 ndist,ndepth = len(dist_list),len(depth_list)
 
 data = np.zeros((ndist,ndepth,4,2))
@@ -137,7 +137,7 @@ for i,depth in enumerate(depth_list):
 
 # -----------------------------------------------------------------------------------------------------------
 
-depth_list = [4]
+depth_list = [10]
 ndist,ndepth = len(dist_list),len(depth_list)
 
 data = np.zeros((ndist,ndepth,4,2))
@@ -178,7 +178,7 @@ for i,depth in enumerate(depth_list):
     custom_plot(ax[0,1],style,'qUCCSD',dist_list,data[:,i,0,0]-data[:,i,0,1])     # --- dev from fci
 
 h,l = ax[0,0].get_legend_handles_labels()
-x0L,y0L,dxL,dyL = 0.50,0.26,0.5,0.5
+x0L,y0L,dxL,dyL = 0.50,0.30,0.5,0.5
 ax[0,0].legend(h,l,fancybox=True,shadow=True,ncol=1,loc=3,
                bbox_to_anchor=(x0L,y0L,dxL,dyL),handlelength=1.5,handletextpad=1.0,columnspacing=1.0,labelspacing=0.1)
 
@@ -262,7 +262,7 @@ for i,depth in enumerate(depth_list):
 
 # -----------------------------------------------------------------------------------------------------------
 
-depth_list = [5]
+depth_list = [7]
 ndist,ndepth = len(dist_list),len(depth_list)
 
 data = np.zeros((ndist,ndepth,4,2))
@@ -307,15 +307,15 @@ for r in [0,1]:
         ax[r,c].axhline(0.0016,ls=':',c='black')
 
 yl = r'$E$-$E_{\mathrm{FCI}}$ [$m\mathrm{E_h}$]'
-la = [' 0.0','5.0','10.0','15.0']
-fill_panel( ax[0,0],                     '',[0.5,4.5],[0.5,1.5,2.5,3.5,4.5],['','','','',''],               yl,[0,0.015],[0,0.005,0.01,0.015],la)
-fill_panel( ax[1,0],r'$R$ [$\mathrm{\AA}$]',[0.5,4.5],[0.5,1.5,2.5,3.5,4.5],['0.5','1.5','2.5','3.5','4.5'],yl,[0,0.015],[0,0.005,0.01,0.015],la)
-DUMMY1 = ax[0,1].twinx()
-fill_panel(  DUMMY1,r'$R$ [$\mathrm{\AA}$]',[0.5,4.5],[0.5,1.5,2.5,3.5,4.5],['','','','',''],               yl,[0,0.015],[0,0.005,0.01,0.015],la)
-fill_panel( ax[0,1],                     '',[0.5,4.5],[0.5,1.5,2.5,3.5,4.5],['','','','',''],               '',[0,0.015],[],[])
-DUMMY2 = ax[1,1].twinx()
-fill_panel(  DUMMY2,r'$R$ [$\mathrm{\AA}$]',[0.5,4.5],[0.5,1.5,2.5,3.5,4.5],['0.5','1.5','2.5','3.5','4.5'],yl,[0,0.015],[0,0.005,0.01,0.015],la)
-fill_panel( ax[1,1],r'$R$ [$\mathrm{\AA}$]',[0.5,4.5],[0.5,1.5,2.5,3.5,4.5],['0.5','1.5','2.5','3.5','4.5'],'',[0,0.015],[],[])
+la = [' 0.0','2.0','4.0','6.0']
+fill_panel( ax[0,0],                     '',[0.5,4.5],[0.5,1.5,2.5,3.5,4.5],['','','','',''],               yl,[0,0.006],[0,0.002,0.004,0.006],la,p=20.0)
+fill_panel( ax[1,0],r'$R$ [$\mathrm{\AA}$]',[0.5,4.5],[0.5,1.5,2.5,3.5,4.5],['0.5','1.5','2.5','3.5','4.5'],yl,[0,0.006],[0,0.002,0.004,0.006],la,p=20.0)
+DUMMY1 = ax[0,1].twinx()                                                                                              
+fill_panel(  DUMMY1,r'$R$ [$\mathrm{\AA}$]',[0.5,4.5],[0.5,1.5,2.5,3.5,4.5],['','','','',''],               yl,[0,0.006],[0,0.002,0.004,0.006],la,p=20.0)
+fill_panel( ax[0,1],                     '',[0.5,4.5],[0.5,1.5,2.5,3.5,4.5],['','','','',''],               '',[0,0.006],[],[],p=20.0)
+DUMMY2 = ax[1,1].twinx()                                                                                              
+fill_panel(  DUMMY2,r'$R$ [$\mathrm{\AA}$]',[0.5,4.5],[0.5,1.5,2.5,3.5,4.5],['0.5','1.5','2.5','3.5','4.5'],yl,[0,0.006],[0,0.002,0.004,0.006],la,p=20.0)
+fill_panel( ax[1,1],r'$R$ [$\mathrm{\AA}$]',[0.5,4.5],[0.5,1.5,2.5,3.5,4.5],['0.5','1.5','2.5','3.5','4.5'],'',[0,0.006],[],[],p=20.0)
 
 ax[0,0].text(0.15,0.85,     'BH',horizontalalignment='center',verticalalignment='center',transform=ax[0,0].transAxes)
 ax[0,1].text(0.15,0.85,'BeH$_2$',horizontalalignment='center',verticalalignment='center',transform=ax[0,1].transAxes)

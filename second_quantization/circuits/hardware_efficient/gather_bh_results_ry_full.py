@@ -38,7 +38,7 @@ def print_results(fname,res_vqe,res_ee,dN=0):
     outf.close()
 
 dist_list = [0.7,0.9,1.1,1.3,1.5,1.7,1.9,2.1,2.3,2.5,2.7,2.9,3.1,3.3,3.5,3.7,3.9,4.1,4.3,4.5,4.7,4.9,5.1,5.3]
-depth_list = [4] #[1,2,3,4]
+depth_list = [6,7,8]
 
 for depth in depth_list:
   for dist in dist_list:
