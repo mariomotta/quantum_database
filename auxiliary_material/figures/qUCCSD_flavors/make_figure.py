@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import itertools
 
 from matplotlib import rc
-rc('font',**{'family':'serif','serif':['cmu serif'],'size':12})
+rc('font',**{'family':'serif','serif':['cmu serif'],'size':14})
 rc('text', usetex=True)
 
 c_list = {'yellow'      : '#DAA520',
@@ -96,7 +96,7 @@ for depth in dlist:
     h,l = ax[0,0].get_legend_handles_labels()
     x0L,y0L,dxL,dyL = -0.02,1.05,2.20,0.20
     ax[0,0].legend(h,l,fancybox=True,shadow=True,ncol=10,loc=3,
-                   bbox_to_anchor=(x0L,y0L,dxL,dyL),handlelength=2.5,handletextpad=1.0,columnspacing=2.0)
+                   bbox_to_anchor=(x0L,y0L,dxL,dyL),handlelength=1.5,handletextpad=0.5,columnspacing=2.0)
     
     fname = 'quccsd_reps_%d.eps' % depth
     fig.savefig(fname,format='eps')

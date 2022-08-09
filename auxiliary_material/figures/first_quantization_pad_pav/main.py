@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import itertools
 
 from matplotlib import rc
-rc('font',**{'family':'serif','serif':['cmu serif'],'size':12})
+rc('font',**{'family':'serif','serif':['cmu serif'],'size':15})
 rc('text', usetex=True)
 
 L        = 4.5

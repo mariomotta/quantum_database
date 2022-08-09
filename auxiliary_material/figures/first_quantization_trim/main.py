@@ -4,12 +4,12 @@ import matplotlib.pyplot as plt
 import itertools
 
 from matplotlib import rc
-rc('font',**{'family':'serif','serif':['cmu serif'],'size':12})
+rc('font',**{'family':'serif','serif':['cmu serif'],'size':14})
 rc('text', usetex=True)
 
-L        = 3.2
+L        = 3.5
 fig,ax   = plt.subplots(3,4,figsize=(4*L,0.5*3*L))
-fig.subplots_adjust(hspace=0.0,wspace=0.4)
+fig.subplots_adjust(hspace=0.0,wspace=0.45)
 
 c_list = {'yellow'      : '#DAA520',
           'orange'      : '#FF8856',
@@ -31,7 +31,7 @@ style = {'1'  :{'color':c_list['red'],        's':'-', 'w':2,'marker':'o','ms':1
          'y'  :{'color':c_list['orange'],     's':'-.','w':2,'marker':'s','ms':16,'label':'y'},
          'z'  :{'color':c_list['yellow'],     's':':', 'w':2,'marker':'D','ms':16,'label':'z'}}
 
-def fill_panel(pan,xlabel,xlim,xticks,xticklabels,ylabel,ylim,yticks,yticklabels,p=20.0,q=10.0):
+def fill_panel(pan,xlabel,xlim,xticks,xticklabels,ylabel,ylim,yticks,yticklabels,p=20.0,q=7.0):
     x0,x1 = xlim
     xlim  = [x0-(x1-x0)/p,x1+(x1-x0)/p]
     pan.set_xlabel(xlabel)

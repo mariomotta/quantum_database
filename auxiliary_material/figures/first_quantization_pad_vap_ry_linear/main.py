@@ -4,12 +4,12 @@ import matplotlib.pyplot as plt
 import itertools
 
 from matplotlib import rc
-rc('font',**{'family':'serif','serif':['cmu serif'],'size':12})
+rc('font',**{'family':'serif','serif':['cmu serif'],'size':14})
 rc('text', usetex=True)
 
-L        = 3.2
+L        = 3.5
 fig,ax   = plt.subplots(3,4,figsize=(4*L,0.5*3*L))
-fig.subplots_adjust(hspace=0.0,wspace=0.4)
+fig.subplots_adjust(hspace=0.0,wspace=0.45)
 
 c_list = {'yellow'      : '#DAA520',
           'orange'      : '#FF8856',
@@ -55,7 +55,6 @@ def get_geometries(mol):
 for j,mol in enumerate(['bh','hf','beh2','h2o']):
 
     d_list = [5,6,7]
-    if(mol=='beh2'): d_list = [5,6]
     data_mol = {'geometries':get_geometries(mol)}
     data_mol['E_fci'] = np.loadtxt('../../../first_quantization/pad/variation_after_projection/operators_ry/%s_info.txt'%mol)[:,4]
     for depth in d_list:

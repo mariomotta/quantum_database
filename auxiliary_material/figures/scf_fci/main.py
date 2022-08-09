@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import itertools
 from matplotlib import rc
 
-rc('font',**{'family':'serif','serif':['cmu serif'],'size':12})
+rc('font',**{'family':'serif','serif':['cmu serif'],'size':15})
 rc('text', usetex=True)
 
 L        = 5.0
@@ -202,7 +202,7 @@ h,l = ax[0,0].get_legend_handles_labels()
 
 x0L,y0L,dxL,dyL = 0.00,1.05,2.10,0.20
 ax[0,0].legend(h,l,fancybox=True,shadow=True,ncol=10,loc=3,
-               bbox_to_anchor=(x0L,y0L,dxL,dyL),handlelength=1.25,handletextpad=0.5,columnspacing=1.5)
+               bbox_to_anchor=(x0L,y0L,dxL,dyL),handlelength=1.0,handletextpad=0.3,columnspacing=1.0)
 
 fname = 'scf_fci.eps'
 fig.savefig(fname,format='eps')

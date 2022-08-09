@@ -2,13 +2,13 @@ import numpy as np
 import matplotlib.pyplot as plt
 import os
 from matplotlib import rc
-rc('font',**{'family':'serif','serif':['cmu serif'],'size':12})
+rc('font',**{'family':'serif','serif':['cmu serif'],'size':14})
 rc('text', usetex=True)
 
 def read_data(fname):
     return np.loadtxt(fname)
 
-def fill_panel(pan,xlabel,xlim,xticks,xticklabels,ylabel,ylim,yticks,yticklabels,p=10.0,q=10.0):
+def fill_panel(pan,xlabel,xlim,xticks,xticklabels,ylabel,ylim,yticks,yticklabels,p=10.0,q=7.0):
     x0,x1 = xlim
     xlim  = [x0-(x1-x0)/p,x1+(x1-x0)/p]
     pan.set_xlabel(xlabel)
@@ -44,18 +44,41 @@ c_list = {'purple'       : '#B284BE',
           'red'          : '#DC343B',
           'light-gray'   : '#adadad',
           'palatinate'   : '#72246C',
-          'black'        : 'black'}
+          'black'        : 'black',
+          '1'            : '#fbbd12',
+          '2'            : '#7ab131',
+          '3'            : '#ea7c1b',
+          '4'            : '#107d48',
+          '5'            : '#e24a1c',
+          '6'            : '#1285ab',
+          '7'            : '#d80b1c',
+          '8'            : '#235c9f',
+          '9'            : '#b2006b',
+          '10'           : '#353a87'}
 
-style = {'scf':{'color':c_list['light-gray'],  's':':', 'w':2,'marker':'o','ms':2,'label':'SCF'},
-         '1'  :{'color':c_list['red'],         's':'-', 'w':2,'marker':'+','ms':4,'label':r'$n_r=1$'},
-         '2'  :{'color':c_list['cobalt'],      's':'--','w':2,'marker':'x','ms':3,'label':r'$n_r=2$'},
-         '3'  :{'color':c_list['orange'],      's':'-', 'w':2,'marker':'+','ms':4,'label':r'$n_r=3$'},
-         '4'  :{'color':c_list['mid_green'],   's':'--','w':2,'marker':'x','ms':3,'label':r'$n_r=4$'},
-         '5'  :{'color':c_list['earwax'],      's':'-', 'w':2,'marker':'+','ms':4,'label':r'$n_r=5$'},
-         '6'  :{'color':c_list['yellow_green'],'s':'--','w':2,'marker':'x','ms':3,'label':r'$n_r=6$'},
-         '7'  :{'color':c_list['gold'],        's':'-', 'w':2,'marker':'+','ms':4,'label':r'$n_r=7$'},
-         '8'  :{'color':c_list['jacaranda'],   's':'--','w':2,'marker':'x','ms':3,'label':r'$n_r=8$'},
-         'fci':{'color':c_list['black'],       's':'-.','w':2,'marker':'o','ms':0,'label':'FCI'}}
+style = {'scf':{'color':c_list['light-gray'],'s':':', 'w':2,'marker':'o','ms':2,'label':'SCF'},
+         '1'  :{'color':c_list['1'],         's':'-', 'w':2,'marker':'+','ms':4,'label':r'$n_r=1$'},
+         '2'  :{'color':c_list['2'],         's':'--','w':2,'marker':'x','ms':3,'label':r'$n_r=2$'},
+         '3'  :{'color':c_list['3'],         's':'-', 'w':2,'marker':'+','ms':4,'label':r'$n_r=3$'},
+         '4'  :{'color':c_list['4'],         's':'--','w':2,'marker':'x','ms':3,'label':r'$n_r=4$'},
+         '5'  :{'color':c_list['5'],         's':'-', 'w':2,'marker':'+','ms':4,'label':r'$n_r=5$'},
+         '6'  :{'color':c_list['6'],         's':'--','w':2,'marker':'x','ms':3,'label':r'$n_r=6$'},
+         '7'  :{'color':c_list['7'],         's':'-', 'w':2,'marker':'+','ms':4,'label':r'$n_r=7$'},
+         '8'  :{'color':c_list['8'],         's':'--','w':2,'marker':'x','ms':3,'label':r'$n_r=8$'},
+         '9'  :{'color':c_list['9'],         's':'-', 'w':2,'marker':'+','ms':4,'label':r'$n_r=9$'},
+         '10' :{'color':c_list['10'],        's':'--','w':2,'marker':'x','ms':3,'label':r'$n_r=10$'},
+         'fci':{'color':c_list['black'],     's':'-.','w':2,'marker':'o','ms':0,'label':'FCI'}}
+
+#style = {'scf':{'color':c_list['light-gray'],  's':':', 'w':2,'marker':'o','ms':2,'label':'SCF'},
+#         '1'  :{'color':c_list['red'],         's':'-', 'w':2,'marker':'+','ms':4,'label':r'$n_r=1$'},
+#         '2'  :{'color':c_list['cobalt'],      's':'--','w':2,'marker':'x','ms':3,'label':r'$n_r=2$'},
+#         '3'  :{'color':c_list['orange'],      's':'-', 'w':2,'marker':'+','ms':4,'label':r'$n_r=3$'},
+#         '4'  :{'color':c_list['mid_green'],   's':'--','w':2,'marker':'x','ms':3,'label':r'$n_r=4$'},
+#         '5'  :{'color':c_list['earwax'],      's':'-', 'w':2,'marker':'+','ms':4,'label':r'$n_r=5$'},
+#         '6'  :{'color':c_list['yellow_green'],'s':'--','w':2,'marker':'x','ms':3,'label':r'$n_r=6$'},
+#         '7'  :{'color':c_list['gold'],        's':'-', 'w':2,'marker':'+','ms':4,'label':r'$n_r=7$'},
+#         '8'  :{'color':c_list['jacaranda'],   's':'--','w':2,'marker':'x','ms':3,'label':r'$n_r=8$'},
+#         'fci':{'color':c_list['black'],       's':'-.','w':2,'marker':'o','ms':0,'label':'FCI'}}
 
 # -----------------------------------------------------------------------------------------------------------
 
@@ -186,10 +209,15 @@ for c in [0,1,2,3]:
     ax[0,2].text(0.75,0.25,     'cascade',horizontalalignment='center',verticalalignment='center',transform=ax[0,2].transAxes,fontsize=14)
     ax[0,3].text(0.75,0.25,     'q-UCCSD',horizontalalignment='center',verticalalignment='center',transform=ax[0,3].transAxes,fontsize=14)
 
+#h,l = ax[0,0].get_legend_handles_labels()
+#x0L,y0L,dxL,dyL = -0.02,1.05,4*L,0.5
+#ax[0,0].legend(h,l,fancybox=True,shadow=True,ncol=10,loc=3,
+#               bbox_to_anchor=(x0L,y0L,dxL,dyL),handlelength=1.4,handletextpad=0.5,columnspacing=0.5)
+
 h,l = ax[0,0].get_legend_handles_labels()
-x0L,y0L,dxL,dyL = -0.02,1.05,4*L,0.5
-ax[0,0].legend(h,l,fancybox=True,shadow=True,ncol=10,loc=3,
-               bbox_to_anchor=(x0L,y0L,dxL,dyL),handlelength=1.4,handletextpad=0.5,columnspacing=0.5)
+x0L,y0L,dxL,dyL = -0.03,1.02,4*L,0.5
+ax[0,0].legend(h,l,fancybox=True,shadow=True,ncol=5,loc=3,
+               bbox_to_anchor=(x0L,y0L,dxL,dyL),handlelength=2.0,handletextpad=0.6,columnspacing=4.0,labelspacing=0.1)
 
 fname = 'second_quantization_h2o.eps'
 fig.savefig(fname,format='eps')

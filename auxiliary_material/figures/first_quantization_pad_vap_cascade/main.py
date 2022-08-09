@@ -4,12 +4,12 @@ import matplotlib.pyplot as plt
 import itertools
 
 from matplotlib import rc
-rc('font',**{'family':'serif','serif':['cmu serif'],'size':12})
+rc('font',**{'family':'serif','serif':['cmu serif'],'size':14})
 rc('text', usetex=True)
 
-L        = 3.2
+L        = 3.5
 fig,ax   = plt.subplots(3,4,figsize=(4*L,0.5*3*L))
-fig.subplots_adjust(hspace=0.0,wspace=0.4)
+fig.subplots_adjust(hspace=0.0,wspace=0.45)
 
 c_list = {'yellow'      : '#DAA520',
           'orange'      : '#FF8856',

@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import os
 from matplotlib import rc
-rc('font',**{'family':'serif','serif':['cmu serif'],'size':10})
+rc('font',**{'family':'serif','serif':['cmu serif'],'size':14})
 rc('text', usetex=True)
 
 def read_data(fname):
@@ -56,7 +56,7 @@ style = {'ry_linear':{'color':c_list['red'],      's':'--', 'w':2,'marker':'o','
 
 # -----------------------------------------------------------------------------------------------------------
 
-L        = 3.3
+L        = 3.7
 fig,ax   = plt.subplots(2,2,figsize=(2*L,0.5*2*L))
 fig.subplots_adjust(hspace=0.0,wspace=0.0,left=0.1,bottom=0.15)
 
@@ -177,10 +177,15 @@ for i,depth in enumerate(depth_list):
 for i,depth in enumerate(depth_list):
     custom_plot(ax[0,1],style,'qUCCSD',dist_list,data[:,i,0,0]-data[:,i,0,1])     # --- dev from fci
 
+#h,l = ax[0,0].get_legend_handles_labels()
+#x0L,y0L,dxL,dyL = 0.50,0.30,0.5,0.5
+#ax[0,0].legend(h,l,fancybox=True,shadow=True,ncol=1,loc=3,
+#               bbox_to_anchor=(x0L,y0L,dxL,dyL),handlelength=1.5,handletextpad=1.0,columnspacing=1.0,labelspacing=0.1)
+
 h,l = ax[0,0].get_legend_handles_labels()
-x0L,y0L,dxL,dyL = 0.50,0.30,0.5,0.5
-ax[0,0].legend(h,l,fancybox=True,shadow=True,ncol=1,loc=3,
-               bbox_to_anchor=(x0L,y0L,dxL,dyL),handlelength=1.5,handletextpad=1.0,columnspacing=1.0,labelspacing=0.1)
+x0L,y0L,dxL,dyL = -0.03,1.02,L,0.5
+ax[0,0].legend(h,l,fancybox=True,shadow=True,ncol=6,loc=3,
+               bbox_to_anchor=(x0L,y0L,dxL,dyL),handlelength=2.0,handletextpad=0.5,columnspacing=1.6,labelspacing=0.1)
 
 # ===============================================================
 
